@@ -19,7 +19,6 @@ class Form(forms.BaseForm):
             'reversion',
             'hvad',
             'parler',
-
         ])
         settings['INSTALLED_APPS'].insert(
             settings['INSTALLED_APPS'].index('django.contrib.admin'),
@@ -89,9 +88,15 @@ class Form(forms.BaseForm):
             'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
         )
 
+        # django sitemap support
+        settings['INSTALLED_APPS'].append('django.contrib.sitemaps')
+
         # django-compressor
         settings['INSTALLED_APPS'].append('compressor')
         settings['STATICFILES_FINDERS'].append('compressor.finders.CompressorFinder')
+
+        # django-robots
+        settings['INSTALLED_APPS'].append('robots')
 
         # django-filer
         settings['INSTALLED_APPS'].extend([
@@ -176,6 +181,7 @@ class Form(forms.BaseForm):
         settings['INSTALLED_APPS'].extend([
             'django_select2',
         ])
+
+        settings['ADDON_URLS'].append('aldryn_cms.urls')
         settings['ADDON_URLS_I18N'].append('aldryn_cms.urls_i18n')
         return settings
-
