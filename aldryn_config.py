@@ -9,7 +9,9 @@ class Form(forms.BaseForm):
 
     def to_settings(self, data, settings):
         from aldryn_addons.utils import boolean_ish, djsenv
+
         env = partial(djsenv, settings=settings)
+
         # TODO: break out a lot of this stuff into other Addons
         settings['INSTALLED_APPS'].extend([
             'cms',
@@ -184,4 +186,13 @@ class Form(forms.BaseForm):
 
         settings['ADDON_URLS'].append('aldryn_cms.urls')
         settings['ADDON_URLS_I18N'].append('aldryn_cms.urls_i18n')
+
+        restarer_url = env('RESTARTER_URL')
+
+        if restarer_url:
+            # restarter url endpoint has been set in env variable
+            # so configure site settings with it.
+            # This will be picked up by signal handler when cms needs a restart.
+            settings['RESTARTER_URL'] = restarer_url
+            settings['RESTARTER_PAYLOAD'] = env('RESTARTER_PAYLOAD')
         return settings
