@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
-from functools import partial
-from aldryn_client import forms
 import json
+from functools import partial
+
+from aldryn_client import forms
 
 
 class Form(forms.BaseForm):
     cms_templates = forms.CharField('CMS Templates', required=True, initial='[["default.html", "Default"]]')
 
     def to_settings(self, data, settings):
+        from django.core.urlresolvers import reverse_lazy
+
         from aldryn_addons.utils import boolean_ish, djsenv
 
         env = partial(djsenv, settings=settings)
@@ -195,4 +198,12 @@ class Form(forms.BaseForm):
             # This will be picked up by signal handler when cms needs a restart.
             settings['RESTARTER_URL'] = restarer_url
             settings['RESTARTER_PAYLOAD'] = env('RESTARTER_PAYLOAD')
+
+        if 'ALDRYN_SSO_LOGIN_WHITE_LIST' in settings:
+            # stage sso enabled
+            # add internal endpoints that do not require authentication
+            settings['ALDRYN_SSO_LOGIN_WHITE_LIST'].append(reverse_lazy('cms-check-uninstall'))
+            # this is an internal django-cms url
+            # which gets called when a user logs out from toolbar
+            settings['ALDRYN_SSO_LOGIN_WHITE_LIST'].append(reverse_lazy('admin:cms_page_resolve'))
         return settings
