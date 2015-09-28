@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import os
 from functools import partial
 
 from aldryn_client import forms
@@ -42,11 +43,16 @@ class Form(forms.BaseForm):
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
-        settings['CMS_TEMPLATES'] = settings.get(
-            'CMS_TEMPLATES',
-            # TODO: optionally load from the json file for fast syncing?
-            json.loads(data['cms_templates'])
-        )
+        old_cms_templates_json = os.path.join(settings['BASE_DIR'], 'cms_templates.json')
+
+        if os.path.exists(old_cms_templates_json):
+            # Backwards compatibility with v2
+            with open(old_cms_templates_json) as fobj:
+                templates = json.load(fobj)
+        else:
+            templates= settings.get('CMS_TEMPLATES', json.loads(data['cms_templates']))
+
+        settings['CMS_TEMPLATES'] = templates
 
         # languages
         languages = [code for code, lang in settings['LANGUAGES']]
