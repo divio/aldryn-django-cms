@@ -39,6 +39,10 @@ setup(
         'djangocms-snippet',
         'djangocms-text-ckeditor',
         'cmsplugin-filer',
+
+        # djangocms-link installs Django-Select2. But Django-Select2 v5 does not
+        # support Django 1.6.x anymore
+        'django-select2<5',
     ),
     include_package_data=True,
     zip_safe=False,
