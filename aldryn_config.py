@@ -7,6 +7,11 @@ from aldryn_client import forms
 
 
 class Form(forms.BaseForm):
+    permissions_enabled = forms.CheckboxField(
+        'Enable permission checks',
+        required=False,
+        initial=True,
+    )
     cms_templates = forms.CharField('CMS Templates', required=True, initial='[["default.html", "Default"]]')
 
     def to_settings(self, data, settings):
@@ -42,6 +47,8 @@ class Form(forms.BaseForm):
         ])
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
+
+        settings['CMS_PERMISSION'] = data['permissions_enabled']
 
         old_cms_templates_json = os.path.join(settings['BASE_DIR'], 'cms_templates.json')
 
