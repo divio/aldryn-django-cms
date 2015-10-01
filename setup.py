@@ -29,7 +29,7 @@ setup(
         'django-robots',
         'aldryn-boilerplates',
         'django-filer',
-        'django-hvad',
+        'django-hvad<1.0.0',
         'aldryn-snake',
 
         # default plugins
