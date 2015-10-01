@@ -29,7 +29,10 @@ setup(
         'django-robots',
         'aldryn-boilerplates',
         'django-filer',
-        'django-hvad',
+        # hvad >= 1.x introduced newer internal apis
+        # aldryn packages have not been upgraded
+        # to support these changes
+        'django-hvad<1.0.0',
         'aldryn-snake',
 
         # default plugins
