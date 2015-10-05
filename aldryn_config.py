@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import json
 import os
-from functools import partial
 
 from aldryn_client import forms
 
+SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not change it here.'
 
 class Form(forms.BaseForm):
     permissions_enabled = forms.CheckboxField(
@@ -12,11 +12,22 @@ class Form(forms.BaseForm):
         required=False,
         initial=True,
     )
-    cms_templates = forms.CharField('CMS Templates', required=True, initial='[["default.html", "Default"]]')
+    cms_templates = forms.CharField(
+        'CMS Templates',
+        required=True,
+        initial='[["default.html", "Default"]]',
+        help_text=SYSTEM_FIELD_WARNING,
+    )
+    boilerplate_name = forms.CharField(
+        'Boilerplate Name',
+        required=False,
+        initial='',
+        help_text=SYSTEM_FIELD_WARNING,
+    )
 
     def to_settings(self, data, settings):
+        from functools import partial
         from django.core.urlresolvers import reverse_lazy
-
         from aldryn_addons.utils import boolean_ish, djsenv
 
         env = partial(djsenv, settings=settings)
@@ -91,7 +102,10 @@ class Form(forms.BaseForm):
         settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
         # aldryn-boilerplates and aldryn-snake
-        settings['ALDRYN_BOILERPLATE_NAME'] = settings.get('ALDRYN_BOILERPLATE_NAME', 'legacy')
+        settings['ALDRYN_BOILERPLATE_NAME'] = env(
+            'ALDRYN_BOILERPLATE_NAME',
+            data.get('boilerplate_name', 'legacy'),
+        )
         settings['INSTALLED_APPS'].append('aldryn_boilerplates')
         settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
             'aldryn_boilerplates.context_processors.boilerplate',
@@ -126,6 +140,9 @@ class Form(forms.BaseForm):
         settings['FILER_DEBUG'] = boolean_ish(env('FILER_DEBUG', settings['DEBUG']))
         settings['FILER_ENABLE_LOGGING'] = boolean_ish(env('FILER_ENABLE_LOGGING', True))
         settings['FILER_IMAGE_USE_ICON'] = True
+        settings['ADDON_URLS'].append(
+            'filer.server.urls'
+        )
 
         # easy-thumbnails
         settings['INSTALLED_APPS'].extend([
@@ -188,7 +205,7 @@ class Form(forms.BaseForm):
                 ['Link', 'Unlink', 'Anchor'],
             ],
         }
-        boilerplate_name = locals().get('ALDRYN_BOILERPLATE_NAME', 'legacy')
+        boilerplate_name = settings['ALDRYN_BOILERPLATE_NAME']
         if boilerplate_name == 'bootstrap3':
             CKEDITOR_SETTINGS['stylesSet'] = 'default:/static/js/addons/ckeditor.wysiwyg.js'
             CKEDITOR_SETTINGS['contentsCss'] = ['/static/css/base.css']
