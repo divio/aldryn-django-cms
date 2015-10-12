@@ -7,7 +7,7 @@ from django.dispatch import receiver
 import cms.signals
 
 
-@receiver(cms.signals.urls_need_reloading, dispatch_uid='aldryn-cms-cloud-apphook')
+@receiver(cms.signals.urls_need_reloading, dispatch_uid='aldryn-django-cms-cloud-apphook')
 def trigger_server_restart(**kwargs):
     # internal endpoint to trigger safe restart
     restarter_url = getattr(settings, 'RESTARTER_URL', None)

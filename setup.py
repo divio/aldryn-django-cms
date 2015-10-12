@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
-from aldryn_cms import __version__
+from aldryn_django_cms import __version__
 
 setup(
-    name="aldryn-cms",
+    name="aldryn-django-cms",
     version=__version__,
     description='An opinionated django CMS setup bundled as an Aldryn Addon',
     author='Divio AG',
     author_email='info@divio.ch',
-    url='https://github.com/aldryn/aldryn-cms',
+    url='https://github.com/aldryn/aldryn-django-cms',
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',

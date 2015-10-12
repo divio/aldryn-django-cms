@@ -218,8 +218,8 @@ class Form(forms.BaseForm):
             'django_select2',
         ])
 
-        settings['ADDON_URLS'].append('aldryn_cms.urls')
-        settings['ADDON_URLS_I18N'].append('aldryn_cms.urls_i18n')
+        settings['ADDON_URLS'].append('aldryn_django_cms.urls')
+        settings['ADDON_URLS_I18N'].append('aldryn_django_cms.urls_i18n')
 
         restarer_url = env('RESTARTER_URL')
 
