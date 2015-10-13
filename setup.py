@@ -12,7 +12,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.1.2',
+        'django-cms==3.1.3',
         'django-reversion',
         # common
         # TODO: mostly to be split out into other packages
