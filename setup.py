@@ -12,8 +12,10 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.1.3',
+        'django-cms==3.0.15',
+        'django-classy-tags>=0.5',
         'django-reversion',
+        'django-mptt>=0.6,<0.6.2',
         # common
         # TODO: mostly to be split out into other packages
         'django-compressor',
@@ -22,7 +24,6 @@ setup(
         'requests',
         'Pillow',
         'lxml',
-        'django-treebeard',
         'django-simple-captcha',
         'BeautifulSoup',
         'django-parler',

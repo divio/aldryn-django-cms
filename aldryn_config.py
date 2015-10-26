@@ -35,7 +35,7 @@ class Form(forms.BaseForm):
         # TODO: break out a lot of this stuff into other Addons
         settings['INSTALLED_APPS'].extend([
             'cms',
-            'treebeard',
+            'mptt',
             'menus',
             'sekizai',
             'reversion',
@@ -134,7 +134,7 @@ class Form(forms.BaseForm):
         settings['INSTALLED_APPS'].extend([
             'filer',
             'easy_thumbnails',
-            'mptt',
+            # mptt is listed in cms base installed apps
             'polymorphic',
         ])
         settings['FILER_DEBUG'] = boolean_ish(env('FILER_DEBUG', settings['DEBUG']))
