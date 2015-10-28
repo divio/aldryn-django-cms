@@ -6,6 +6,7 @@ from aldryn_client import forms
 
 SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not change it here.'
 
+
 class Form(forms.BaseForm):
     permissions_enabled = forms.CheckboxField(
         'Enable permission checks',
@@ -32,13 +33,17 @@ class Form(forms.BaseForm):
 
         env = partial(djsenv, settings=settings)
 
-        # TODO: break out a lot of this stuff into other Addons
+        # Core CMS stuff
         settings['INSTALLED_APPS'].extend([
             'cms',
-            'treebeard',
             'menus',
             'sekizai',
+            'treebeard',
             'reversion',
+        ])
+
+        # TODO: break out this stuff into other addons
+        settings['INSTALLED_APPS'].extend([
             'hvad',
             'parler',
         ])
@@ -149,7 +154,8 @@ class Form(forms.BaseForm):
             'easy_thumbnails',
         ])
         settings['THUMBNAIL_QUALITY'] = env('THUMBNAIL_QUALITY', 90)
-        settings['THUMBNAIL_HIGH_RESOLUTION'] = False  # FIXME: enabling THUMBNAIL_HIGH_RESOLUTION causes timeouts/500!
+        # FIXME: enabling THUMBNAIL_HIGH_RESOLUTION causes timeouts/500!
+        settings['THUMBNAIL_HIGH_RESOLUTION'] = False
         settings['THUMBNAIL_PRESERVE_EXTENSIONS'] = ['png', 'gif']
         settings['THUMBNAIL_PROCESSORS'] = (
             'easy_thumbnails.processors.colorspace',

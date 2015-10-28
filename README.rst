@@ -30,8 +30,8 @@ Manual Installation
                ``aldryn-addons`` and ``aldryn-django`` first!
 
 
-Add ``aldryn-django-cms`` to your projects ``requirements.txt`` or pip install it.
-::
+Add ``aldryn-django-cms`` to your projects ``requirements.txt`` or pip
+install it.::
 
     pip install aldryn-django-cms==3.1.2.0
 
@@ -51,7 +51,7 @@ instructions, you should already have a ``ALDRYN_ADDONS`` setting. Add
 Create the ``addons/aldryn-django-cms`` directory at the same level as your
 ``manage.py``. Then copy ``addon.json``, ``aldryn_config.py`` from
 the matching sourcecode into it.
-Also create a ``settings.json`` file in the same directory with the follwing
+Also create a ``settings.json`` file in the same directory with the following
 content::
 
     {
