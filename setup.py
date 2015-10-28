@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages
 from aldryn_django_cms import __version__
 
@@ -12,40 +13,53 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.1.3',
-        'django-reversion',
-        # common
-        # TODO: mostly to be split out into other packages
-        'django-compressor',
-        'YURL',
-        'South',
+        'django-cms>=3.2,<3.3',
         'requests',
-        'Pillow',
-        'lxml',
-        'django-treebeard',
-        'django-simple-captcha',
-        'BeautifulSoup',
-        'django-parler',
-        'django-robots',
-        'aldryn-boilerplates',
-        'django-filer',
-        # hvad >= 1.x introduced newer internal apis
-        # aldryn packages have not been upgraded
-        # to support these changes
-        'django-hvad<1.0.0',
-        'aldryn-snake',
 
-        # default plugins
-        # TODO: split into other packages
+        # Default plugins
+        # ---------------
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
         'djangocms-text-ckeditor',
+
+        # Recommended plugins
+        # -------------------
         'cmsplugin-filer',
 
-        # djangocms-link installs Django-Select2. But Django-Select2 v5 does not
-        # support Django 1.6.x anymore
-        'django-select2<5',
+        # Dependencies installed as part of CMS
+        # -------------------------------------
+        # 'Django>=1.6.9,<1.9',     # django-cms
+        # 'django-classy-tags',     # django-cms
+        # 'django-formtools',       # django-cms
+        # 'django-reversion',       # django-cms
+        # 'django-sekizai',         # django-cms
+        # 'Django-Select2<5',       # django-cms, djangocms-link
+        # 'django-treebeard',       # django-cms
+        # 'djangocms-admin-style',  # django-cms
+        # 'html5lib==0.9999999',    # django-cms
+        # 'six==1.10.0'             # django-cms
+        # 'South',                  # django-cms
+        # 'django-appconf',         # cmsplugin-filer
+        # 'django-filer',           # cmsplugin-filer
+        # 'easy_thumbnails',        # cmsplugin-filer
+        # 'Pillow',                 # easy_thumbnails, djangocms-text-ckeditor
+
+        # Other common
+        # ------------
+        # TODO: mostly to be split out into other packages
+        'aldryn-boilerplates',
+        'aldryn-snake',
+        'BeautifulSoup',
+        'django-compressor',
+        # HVAD >= 1.x introduced newer internal APIs aldryn packages have not
+        # been upgraded to support these changes
+        'django-hvad<1.0.0',
+        'django-parler',
+        'django-robots',
+        'django-simple-captcha',
+        'lxml',
+        'YURL',
     ),
     include_package_data=True,
     zip_safe=False,
