@@ -33,7 +33,7 @@ Manual Installation
 Add ``aldryn-django-cms`` to your projects ``requirements.txt`` or pip
 install it.::
 
-    pip install aldryn-django-cms==3.1.2.0
+    pip install aldryn-django-cms==3.2.0.0
 
 
 The version is made up of the django CMS release with an added digit for the
