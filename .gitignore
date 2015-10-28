@@ -1,3 +1,6 @@
 /settings.json
 .DS_STORE
 *.pyc
+aldryn_django_cms.egg-info
+build
+dist
