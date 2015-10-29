@@ -28,7 +28,7 @@ setup(
         'BeautifulSoup',
         'django-parler',
         'django-robots',
-        'aldryn-boilerplates',
+        'aldryn-boilerplates>=0.7.3',
         'django-filer',
         # hvad >= 1.x introduced newer internal apis
         # aldryn packages have not been upgraded
