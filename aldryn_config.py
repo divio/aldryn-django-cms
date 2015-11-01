@@ -227,13 +227,13 @@ class Form(forms.BaseForm):
         settings['ADDON_URLS'].append('aldryn_django_cms.urls')
         settings['ADDON_URLS_I18N'].append('aldryn_django_cms.urls_i18n')
 
-        restarer_url = env('RESTARTER_URL')
+        restarter_url = env('RESTARTER_URL')
 
-        if restarer_url:
+        if restarter_url:
             # restarter url endpoint has been set in env variable
             # so configure site settings with it.
             # This will be picked up by signal handler when cms needs a restart.
-            settings['RESTARTER_URL'] = restarer_url
+            settings['RESTARTER_URL'] = restarter_url
             settings['RESTARTER_PAYLOAD'] = env('RESTARTER_PAYLOAD')
 
         if 'ALDRYN_SSO_LOGIN_WHITE_LIST' in settings:
