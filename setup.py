@@ -62,7 +62,9 @@ setup(
         'YURL',
     ),
     dependency_links=[
-        "https://github.com/divio/django-cms/archive/3.2.0.rc3.tar.gz#egg=django-cms-3.2.0.rc3"
+        # we get 423 errors on the github url :-(
+        #'https://github.com/divio/django-cms/archive/3.2.0.rc3.tar.gz#egg=django-cms-3.2.0.rc3',
+        'https://control-panel-live-extra-packages.s3.amazonaws.com/django-cms/django-cms-3.2.0.rc3.tar.gz',
     ],
     include_package_data=True,
     zip_safe=False,
