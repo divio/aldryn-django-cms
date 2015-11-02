@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms-3.2.0.rc2',
+        'django-cms==3.2.0.rc3',
         'requests',
 
         # Default plugins
@@ -61,8 +61,8 @@ setup(
         'lxml',
         'YURL',
     ),
-    dependency_links = [
-        "https://github.com/divio/django-cms/archive/3.2.0.rc2.tar.gz#egg=django-cms-3.2.0.rc2"
+    dependency_links=[
+        "https://github.com/divio/django-cms/archive/3.2.0.rc3.tar.gz#egg=django-cms-3.2.0.rc3"
     ],
     include_package_data=True,
     zip_safe=False,
