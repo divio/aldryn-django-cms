@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.2.0.rc3',
+        'django-cms==3.2.0.rc4',
         'requests',
 
         # Default plugins
@@ -63,8 +63,8 @@ setup(
     ),
     dependency_links=[
         # we get 423 errors on the github url :-(
-        #'https://github.com/divio/django-cms/archive/3.2.0.rc3.tar.gz#egg=django-cms-3.2.0.rc3',
-        'https://control-panel-live-extra-packages.s3.amazonaws.com/django-cms/django-cms-3.2.0.rc3.tar.gz#egg=django-cms-3.2.0.rc3',
+        #'https://github.com/divio/django-cms/archive/3.2.0.rc4.tar.gz#egg=django-cms-3.2.0.rc4',
+        'https://control-panel-live-extra-packages.s3.amazonaws.com/django-cms/django-cms-3.2.0.rc4.tar.gz#egg=django-cms-3.2.0.rc4',
     ],
     include_package_data=True,
     zip_safe=False,
