@@ -35,6 +35,13 @@ class Form(forms.BaseForm):
         # TODO: break out a lot of this stuff into other Addons
         settings['INSTALLED_APPS'].extend([
             'cms',
+            # 'aldryn_django_cms' must be after 'cms', otherwise we get
+            # import time exceptions on other packages (e.g alryn-bootstrap3
+            # returns:
+            # link_page = cms.models.fields.PageField(
+            # AttributeError: 'module' object has no attribute 'fields'
+            # )
+            'aldryn_django_cms',
             'treebeard',
             'menus',
             'sekizai',
