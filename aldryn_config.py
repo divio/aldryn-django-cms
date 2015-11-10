@@ -68,6 +68,12 @@ class Form(forms.BaseForm):
             'cms.middleware.toolbar.ToolbarMiddleware',
             'cms.middleware.language.LanguageCookieMiddleware',
         ])
+        settings['MIDDLEWARE_CLASSES'].insert(
+            settings['MIDDLEWARE_CLASSES'].index(
+                'django.middleware.common.CommonMiddleware'
+            ),
+            'cms.middleware.utils.ApphookReloadMiddleware',
+        )
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
@@ -233,15 +239,6 @@ class Form(forms.BaseForm):
 
         settings['ADDON_URLS'].append('aldryn_django_cms.urls')
         settings['ADDON_URLS_I18N'].append('aldryn_django_cms.urls_i18n')
-
-        restarter_url = env('RESTARTER_URL')
-
-        if restarter_url:
-            # restarter url endpoint has been set in env variable
-            # so configure site settings with it.
-            # This will be picked up by signal handler when cms needs a restart.
-            settings['RESTARTER_URL'] = restarter_url
-            settings['RESTARTER_PAYLOAD'] = env('RESTARTER_PAYLOAD')
 
         if 'ALDRYN_SSO_LOGIN_WHITE_LIST' in settings:
             # stage sso enabled
