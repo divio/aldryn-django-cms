@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.2.0.rc4',
+        'django-cms==3.2.0.rc5',  # 3.2.0.rc5 is released on devpi.divio.ch
         'requests',
 
         # Default plugins
@@ -36,7 +36,7 @@ setup(
         # 'django-sekizai',         # django-cms
         # 'Django-Select2<5',       # django-cms, djangocms-link
         # 'django-treebeard',       # django-cms
-        # 'djangocms-admin-style',  # django-cms
+        'djangocms-admin-style>=1.0.5',  # django-cms
         # 'html5lib==0.9999999',    # django-cms
         # 'six==1.10.0'             # django-cms
         # 'South',                  # django-cms
@@ -61,11 +61,6 @@ setup(
         'lxml',
         'YURL',
     ),
-    dependency_links=[
-        # we get 423 errors on the github url :-(
-        #'https://github.com/divio/django-cms/archive/3.2.0.rc4.tar.gz#egg=django-cms-3.2.0.rc4',
-        'https://control-panel-live-extra-packages.s3.amazonaws.com/django-cms/django-cms-3.2.0.rc4.tar.gz#egg=django-cms-3.2.0.rc4',
-    ],
     include_package_data=True,
     zip_safe=False,
 )
