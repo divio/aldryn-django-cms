@@ -1,7 +1,13 @@
 CHANGELOG
 =========
 
-0.1 (2015-08-27)
-----------------
+3.1.3.1 (2015-11-10)
+--------------------
 
-Initial release
+* fix aldryn platform restarter webhook on cms apphook change
+
+
+3.1.3.0 (2015-08-27)
+--------------------
+
+bump cms to 3.1.3
