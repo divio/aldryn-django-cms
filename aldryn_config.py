@@ -91,10 +91,10 @@ class Form(forms.BaseForm):
         settings['CMS_TEMPLATES'] = templates
 
         # languages
-        languages = [code for code, lang in settings['LANGUAGES']]
+        language_codes = [code for code, lang in settings['LANGUAGES']]
         settings['CMS_LANGUAGES'] = {
             'default': {
-                'fallbacks': [fbcode for fbcode in languages],
+                'fallbacks': [fbcode for fbcode in language_codes],
                 'redirect_on_fallback': True,
                 'public': True,
                 'hide_untranslated': False,
@@ -103,9 +103,9 @@ class Form(forms.BaseForm):
                 {
                     'code': code,
                     'name': settings['ALL_LANGUAGES_DICT'][code],
-                    'fallbacks': [fbcode for fbcode in languages if fbcode != code],
+                    'fallbacks': [fbcode for fbcode in language_codes if fbcode != code],
                     'public': True
-                } for code in languages
+                } for code in language_codes
             ]
         }
 
@@ -117,7 +117,7 @@ class Form(forms.BaseForm):
                 langs = [
                     {
                         'code': lang['code'],
-                        'fallbacks': [c for c in languages if c != lang['code']]
+                        'fallbacks': [fbcode for fbcode in language_codes if fbcode != lang['code']]
                     } for lang in languages
                 ]
                 settings['PARLER_LANGUAGES'].update({site_id: langs})
