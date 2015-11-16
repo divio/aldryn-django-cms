@@ -61,6 +61,7 @@ class Form(forms.BaseForm):
         settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
             'sekizai.context_processors.sekizai',
             'cms.context_processors.cms_settings',
+            'django.template.context_processors.request',
         ])
         settings['MIDDLEWARE_CLASSES'].extend([
             'cms.middleware.user.CurrentUserMiddleware',

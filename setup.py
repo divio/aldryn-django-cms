@@ -52,9 +52,7 @@ setup(
         'aldryn-snake',
         'BeautifulSoup',
         'django-compressor',
-        # HVAD >= 1.x introduced newer internal APIs aldryn packages have not
-        # been upgraded to support these changes
-        'django-hvad<1.0.0',
+        'django-hvad',
         'django-parler',
         'django-robots',
         'django-simple-captcha',
