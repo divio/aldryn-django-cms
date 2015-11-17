@@ -2,13 +2,7 @@
 import json
 import os
 
-from distutils.version import LooseVersion
-
-from django import get_version
-
 from aldryn_client import forms
-
-django_version = LooseVersion(get_version())
 
 SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not change it here.'
 
@@ -39,6 +33,10 @@ class Form(forms.BaseForm):
 
         env = partial(djsenv, settings=settings)
 
+        # Need to detect if these settings are for Django 1.8+
+        # Is there a better way? Can't import django to check version =(
+        is_django_18_or_later = ('TEMPLATES' in settings)
+
         # Core CMS stuff
         settings['INSTALLED_APPS'].extend([
             'cms',
@@ -64,7 +62,7 @@ class Form(forms.BaseForm):
             'djangocms_admin_style',
         )
 
-        if django_version >= LooseVersion('1.8.0'):
+        if is_django_18_or_later:
             settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
@@ -153,7 +151,7 @@ class Form(forms.BaseForm):
         )
         settings['INSTALLED_APPS'].append('aldryn_boilerplates')
 
-        if django_version >= LooseVersion('1.8.0'):
+        if is_django_18_or_later:
             settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
                 'aldryn_boilerplates.context_processors.boilerplate',
                 'aldryn_snake.template_api.template_processor',
