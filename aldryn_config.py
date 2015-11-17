@@ -2,7 +2,13 @@
 import json
 import os
 
+from distutils.version import LooseVersion
+
+from django import get_version
+
 from aldryn_client import forms
+
+django_version = LooseVersion(get_version())
 
 SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not change it here.'
 
@@ -51,17 +57,24 @@ class Form(forms.BaseForm):
 
         # TODO: break out this stuff into other addons
         settings['INSTALLED_APPS'].extend([
-            'hvad',
             'parler',
         ])
         settings['INSTALLED_APPS'].insert(
             settings['INSTALLED_APPS'].index('django.contrib.admin'),
             'djangocms_admin_style',
         )
-        settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
-            'sekizai.context_processors.sekizai',
-            'cms.context_processors.cms_settings',
-        ])
+
+        if django_version >= LooseVersion('1.8.0'):
+            settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
+            ])
+        else:
+            settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
+            ])
+
         settings['MIDDLEWARE_CLASSES'].extend([
             'cms.middleware.user.CurrentUserMiddleware',
             'cms.middleware.page.CurrentPageMiddleware',
@@ -130,21 +143,37 @@ class Form(forms.BaseForm):
 
         settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
-
         # aldryn-boilerplates and aldryn-snake
+
+        # FIXME: Make ALDRYN_BOILERPLATE_NAME a configurable parameter
+
         settings['ALDRYN_BOILERPLATE_NAME'] = env(
             'ALDRYN_BOILERPLATE_NAME',
             data.get('boilerplate_name', 'legacy'),
         )
         settings['INSTALLED_APPS'].append('aldryn_boilerplates')
-        settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
-            'aldryn_boilerplates.context_processors.boilerplate',
-            'aldryn_snake.template_api.template_processor',
-        ])
-        settings['TEMPLATE_LOADERS'].insert(
-            settings['TEMPLATE_LOADERS'].index('django.template.loaders.app_directories.Loader'),
-            'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
-        )
+
+        if django_version >= LooseVersion('1.8.0'):
+            settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
+                'aldryn_boilerplates.context_processors.boilerplate',
+                'aldryn_snake.template_api.template_processor',
+            ])
+            settings['TEMPLATES'][0]['OPTIONS']['loaders'].insert(
+                settings['TEMPLATE_LOADERS'].index(
+                    'django.template.loaders.app_directories.Loader'),
+                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
+            )
+        else:
+            settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
+                'aldryn_boilerplates.context_processors.boilerplate',
+                'aldryn_snake.template_api.template_processor',
+            ])
+            settings['TEMPLATE_LOADERS'].insert(
+                settings['TEMPLATE_LOADERS'].index(
+                    'django.template.loaders.app_directories.Loader'),
+                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
+            )
+
         settings['STATICFILES_FINDERS'].insert(
             settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
             'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
