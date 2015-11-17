@@ -39,7 +39,6 @@ setup(
         'djangocms-admin-style>=1.0.5',  # django-cms
         # 'html5lib==0.9999999',    # django-cms
         # 'six==1.10.0'             # django-cms
-        # 'South',                  # django-cms
         # 'django-appconf',         # cmsplugin-filer
         # 'django-filer',           # cmsplugin-filer
         # 'easy_thumbnails',        # cmsplugin-filer
@@ -52,9 +51,6 @@ setup(
         'aldryn-snake',
         'BeautifulSoup',
         'django-compressor',
-        # HVAD >= 1.x introduced newer internal APIs aldryn packages have not
-        # been upgraded to support these changes
-        'django-hvad<1.0.0',
         'django-parler',
         'django-robots',
         'django-simple-captcha',
