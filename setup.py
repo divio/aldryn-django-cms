@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.2.0.rc13',  # 3.2.0.rc13 is released on devpi.divio.ch
+        'django-cms==3.2.0.rc14',  # 3.2.0.rc14 is released on devpi.divio.ch
         'requests',
 
         # Default plugins
