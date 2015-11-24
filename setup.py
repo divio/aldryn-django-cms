@@ -32,7 +32,9 @@ setup(
         # 'Django>=1.6.9,<1.9',     # django-cms
         # 'django-classy-tags',     # django-cms
         # 'django-formtools',       # django-cms
-        # 'django-reversion',       # django-cms
+        'django-reversion==1.8.7',  # We force this version of django-reverson
+                                    # as a workaround to a problem with with
+                                    # django-cms 3.2.0
         # 'django-sekizai',         # django-cms
         # 'Django-Select2<5',       # django-cms, djangocms-link
         # 'django-treebeard',       # django-cms
