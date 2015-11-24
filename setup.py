@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.2.0.rc14',  # 3.2.0.rc14 is released on devpi.divio.ch
+        'django-cms==3.2.0',
         'requests',
 
         # Default plugins
@@ -36,7 +36,7 @@ setup(
         # 'django-sekizai',         # django-cms
         # 'Django-Select2<5',       # django-cms, djangocms-link
         # 'django-treebeard',       # django-cms
-        'djangocms-admin-style>=1.0.5',  # django-cms
+        'djangocms-admin-style>=1.0.6',  # django-cms
         # 'html5lib==0.9999999',    # django-cms
         # 'six==1.10.0'             # django-cms
         # 'django-appconf',         # cmsplugin-filer
