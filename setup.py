@@ -16,6 +16,8 @@ setup(
         'django-classy-tags>=0.5',
         'django-reversion',
         'django-mptt>=0.6,<0.6.2',
+
+        'djangocms-admin-style<1.0',
         # common
         # TODO: mostly to be split out into other packages
         'django-compressor',
@@ -41,7 +43,7 @@ setup(
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor',
+        'djangocms-text-ckeditor<2.8',
         'cmsplugin-filer',
 
         # djangocms-link installs Django-Select2. But Django-Select2 v5 does not
