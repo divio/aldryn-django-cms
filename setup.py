@@ -14,6 +14,8 @@ setup(
         'aldryn-addons',
         'django-cms==3.1.3',
         'django-reversion',
+
+        'djangocms-admin-style<=0.2.5',
         # common
         # TODO: mostly to be split out into other packages
         'django-compressor',
@@ -40,7 +42,7 @@ setup(
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor',
+        'djangocms-text-ckeditor<=2.7',
         'cmsplugin-filer',
 
         # djangocms-link installs Django-Select2. But Django-Select2 v5 does not
