@@ -26,7 +26,7 @@ setup(
         'lxml',
         'django-treebeard',
         'django-simple-captcha',
-        'BeautifulSoup',
+        'BeautifulSoup4',
         'django-parler',
         'django-robots',
         'aldryn-boilerplates',
