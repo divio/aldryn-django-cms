@@ -64,14 +64,7 @@ class Form(forms.BaseForm):
 
         if is_django_18_or_later:
             settings['MIGRATION_MODULES'] = {
-                'djangocms_snippet': 'djangocms_snippet.migrations_django',
-                'djangocms_picture': 'djangocms_picture.migrations_django',
-                'djangocms_inherit': 'djangocms_inherit.migrations_django',
                 'djangocms_grid': 'djangocms_grid.migrations_django',
-                'djangocms_googlemap': 'djangocms_googlemap.migrations_django',
-                'djangocms_video': 'djangocms_video.migrations_django',
-                'djangocms_flash': 'djangocms_flash.migrations_django',
-                'djangocms_teaser': 'djangocms_teaser.migrations_django',
                 'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
                 'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
                 'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
