@@ -71,7 +71,7 @@ class Form(forms.BaseForm):
                 'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
                 'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
                 'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
-                'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django'
+                'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
             }
 
         if is_django_18_or_later:
