@@ -25,8 +25,6 @@ setup(
 
         # Recommended plugins
         # -------------------
-        'django_polymorphic>=0.7,<0.8',
-        'django-filer>=1.0.0,<=1.0.4',
         'cmsplugin-filer',
 
         # Dependencies installed as part of CMS
