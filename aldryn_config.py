@@ -46,7 +46,6 @@ class Form(forms.BaseForm):
             'menus',
             'sekizai',
             'reversion',
-            'hvad',
             'parler',
         ])
         settings['INSTALLED_APPS'].insert(

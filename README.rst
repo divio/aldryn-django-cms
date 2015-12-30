@@ -8,7 +8,7 @@ Aldryn CMS
 An opinionated django CMS setup bundled as an Aldryn Addon.
 
 This package will auto configure django CMS including some extra tools.
-It includes django-filer, a default set of plugins, django-hvad and
+It includes django-filer, a default set of plugins and
 django-parler, aldryn-boilerplates and some more.
 A future goal is to split some of those other tools into separate Addons.
 
