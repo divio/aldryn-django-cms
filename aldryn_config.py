@@ -89,12 +89,7 @@ class Form(forms.BaseForm):
             'cms.middleware.toolbar.ToolbarMiddleware',
             'cms.middleware.language.LanguageCookieMiddleware',
         ])
-        settings['MIDDLEWARE_CLASSES'].insert(
-            settings['MIDDLEWARE_CLASSES'].index(
-                'django.middleware.common.CommonMiddleware'
-            ),
-            'cms.middleware.utils.ApphookReloadMiddleware',
-        )
+        settings['MIDDLEWARE_CLASSES'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
