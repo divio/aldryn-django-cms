@@ -132,6 +132,21 @@ class Form(forms.BaseForm):
         # django-compressor
         settings['INSTALLED_APPS'].append('compressor')
         settings['STATICFILES_FINDERS'].append('compressor.finders.CompressorFinder')
+        # Disable django-comporessor for now. It does not work with the current
+        # setup. The cache is shared, which holds the manifest. But the
+        # compressed files reside in the docker container, which can go away at
+        # any time.
+        # Working solutions could be:
+        # 1) use pre-compression
+        # (https://django-compressor.readthedocs.org/en/latest/usage/#pre-compression)
+        # at docker image build time.
+        # 2) Use shared storage and save the manifest with the generated files.
+        # Although that could be a problem if different versions of the same
+        # app compete for the manifest file.
+
+        # We're keeping compressor in INSTALLED_APPS for now, so that templates
+        # in existing projects don't break.
+        settings['COMPRESS_ENABLED'] = env('COMPRESS_ENABLED', False)
 
         # django-robots
         settings['INSTALLED_APPS'].append('robots')
