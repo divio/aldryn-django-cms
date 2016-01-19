@@ -42,7 +42,7 @@ setup(
         # 'html5lib==0.9999999',    # django-cms
         # 'six==1.10.0'             # django-cms
         # 'django-appconf',         # cmsplugin-filer
-        # 'django-filer',           # cmsplugin-filer
+        'django-filer<1.2',
         # 'easy_thumbnails',        # cmsplugin-filer
         # 'Pillow',                 # easy_thumbnails, djangocms-text-ckeditor
 
