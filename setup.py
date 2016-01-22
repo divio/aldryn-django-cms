@@ -30,7 +30,7 @@ setup(
         # Dependencies installed as part of CMS
         # -------------------------------------
         # 'Django>=1.6.9,<1.9',     # django-cms
-        # 'django-classy-tags',     # django-cms
+        'django-classy-tags>=0.5,<0.7.1',  # django-cms
         # 'django-formtools',       # django-cms
         'django-reversion==1.8.7',  # We force this version of django-reverson
                                     # as a workaround to a problem with with
