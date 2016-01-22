@@ -13,6 +13,7 @@ setup(
     install_requires=(
         'aldryn-addons',
         'django-cms==3.1.4',
+        'django-classy-tags>=0.5,<0.7.1',
         'django-reversion',
 
         'djangocms-admin-style<1.0.0',
