@@ -25,26 +25,27 @@ setup(
 
         # Recommended plugins
         # -------------------
-        'cmsplugin-filer',
+        'cmsplugin-filer>=1.0,<1.2',
 
         # Dependencies installed as part of CMS
         # -------------------------------------
-        # 'Django>=1.6.9,<1.9',     # django-cms
+        # 'Django>=1.6.9,<1.9',            # django-cms
         'django-classy-tags>=0.5,<0.7.1',  # django-cms
-        # 'django-formtools',       # django-cms
-        'django-reversion==1.8.7',  # We force this version of django-reverson
-                                    # as a workaround to a problem with with
-                                    # django-cms 3.2.0
-        # 'django-sekizai',         # django-cms
-        # 'Django-Select2<5',       # django-cms, djangocms-link
-        # 'django-treebeard',       # django-cms
-        'djangocms-admin-style>=1.0.6',  # django-cms
-        # 'html5lib==0.9999999',    # django-cms
-        # 'six==1.10.0'             # django-cms
-        # 'django-appconf',         # cmsplugin-filer
+        # 'django-formtools',              # django-cms
+
+        # NOTE: As of 3.2.1.x, we now let Aldryn Django determine the version
+        # of Django Reversion to install.
+
+        # 'django-sekizai',                # django-cms
+        # 'Django-Select2<5',              # django-cms, djangocms-link
+        # 'django-treebeard',              # django-cms
+        'djangocms-admin-style>=1.0.6',
+        # 'html5lib==0.9999999',           # django-cms
+        # 'six==1.10.0'                    # django-cms
+        # 'django-appconf',                # cmsplugin-filer
         'django-filer<1.2',
-        # 'easy_thumbnails',        # cmsplugin-filer
-        # 'Pillow',                 # easy_thumbnails, djangocms-text-ckeditor
+        # 'easy_thumbnails',               # cmsplugin-filer
+        # 'Pillow',                        # easy_thumbnails, djangocms-text-ckeditor
 
         # Other common
         # ------------
