@@ -50,7 +50,7 @@ setup(
         # Other common
         # ------------
         # TODO: mostly to be split out into other packages
-        'aldryn-boilerplates',
+        # 'aldryn-boilerplates',
         'aldryn-snake',
         'BeautifulSoup',
         'django-compressor',
