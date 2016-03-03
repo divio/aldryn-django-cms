@@ -30,7 +30,7 @@ setup(
         # Dependencies installed as part of CMS
         # -------------------------------------
         # 'Django>=1.6.9,<1.9',            # django-cms
-        'django-classy-tags>=0.5,<0.7.1',  # django-cms
+        # 'django-classy-tags',            # django-cms
         # 'django-formtools',              # django-cms
 
         # NOTE: As of 3.2.1.x, we now let Aldryn Django determine the version
