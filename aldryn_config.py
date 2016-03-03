@@ -157,25 +157,20 @@ class Form(forms.BaseForm):
         settings['INSTALLED_APPS'].append('aldryn_boilerplates')
 
         if is_django_18_or_later:
-            settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
-                'aldryn_boilerplates.context_processors.boilerplate',
-                'aldryn_snake.template_api.template_processor',
-            ])
-            settings['TEMPLATES'][0]['OPTIONS']['loaders'].insert(
-                settings['TEMPLATE_LOADERS'].index(
-                    'django.template.loaders.app_directories.Loader'),
-                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
-            )
+            TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
+            TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         else:
-            settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
-                'aldryn_boilerplates.context_processors.boilerplate',
-                'aldryn_snake.template_api.template_processor',
-            ])
-            settings['TEMPLATE_LOADERS'].insert(
-                settings['TEMPLATE_LOADERS'].index(
-                    'django.template.loaders.app_directories.Loader'),
-                'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
-            )
+            TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATE_CONTEXT_PROCESSORS']
+            TEMPLATE_LOADERS = settings['TEMPLATE_LOADERS']
+        TEMPLATE_CONTEXT_PROCESSORS.extend([
+            'aldryn_boilerplates.context_processors.boilerplate',
+            'aldryn_snake.template_api.template_processor',
+        ])
+        TEMPLATE_LOADERS.insert(
+            TEMPLATE_LOADERS.index(
+                'django.template.loaders.app_directories.Loader'),
+            'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
+        )
 
         settings['STATICFILES_FINDERS'].insert(
             settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
