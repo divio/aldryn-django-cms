@@ -30,6 +30,7 @@ class Form(forms.BaseForm):
         from functools import partial
         from django.core.urlresolvers import reverse_lazy
         from aldryn_addons.utils import boolean_ish, djsenv
+        from aldryn_django import storage
 
         env = partial(djsenv, settings=settings)
 
@@ -234,6 +235,11 @@ class Form(forms.BaseForm):
             'easy_thumbnails.source_generators.pil_image',
         )
         settings['THUMBNAIL_CACHE_DIMENSIONS'] = True
+
+        for storage_backend in storage.SCHEMES.itervalues():
+            if storage_backend == settings['DEFAULT_FILE_STORAGE']:
+                settings['THUMBNAIL_DEFAULT_STORAGE'] = storage_backend
+                break
 
         # commented out because fix-tree has a major bug
         # this should be ok with CMS >=3.1.4
