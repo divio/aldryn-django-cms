@@ -236,6 +236,11 @@ class Form(forms.BaseForm):
         )
         settings['THUMBNAIL_CACHE_DIMENSIONS'] = True
 
+        # easy_thumbnails uses django's default storage backend (local file
+        # system storage) by default, even if the DEFAULT_FILE_STORAGE setting
+        # points to something else.
+        # If the DEFAULT_FILE_STORAGE has been set to a value known by
+        # aldryn-django, then use that as THUMBNAIL_DEFAULT_STORAGE as well.
         for storage_backend in storage.SCHEMES.itervalues():
             if storage_backend == settings['DEFAULT_FILE_STORAGE']:
                 settings['THUMBNAIL_DEFAULT_STORAGE'] = storage_backend
