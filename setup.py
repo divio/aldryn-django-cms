@@ -31,7 +31,7 @@ setup(
         'django-parler',
         'django-robots',
         'aldryn-boilerplates>=0.7.3',
-        'django-filer',
+        'django-filer<1.3',
         # hvad >= 1.x introduced newer internal apis
         # aldryn packages have not been upgraded
         # to support these changes
