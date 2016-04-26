@@ -31,7 +31,7 @@ setup(
         'django-parler',
         'django-robots',
         'aldryn-boilerplates',
-        'django-filer<1.2',
+        'django-filer<1.3',
         'aldryn-snake',
 
         # default plugins
