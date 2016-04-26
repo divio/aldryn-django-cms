@@ -10,7 +10,7 @@ SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not chang
 class Form(forms.BaseForm):
     unescaped_render_model_tags = forms.CheckboxField(
         'Leave "render_model" tags unescaped? (security risk)',
-        required=True,
+        required=False,
         initial=True,
         help_text='IMPORTANT: Please review your project templates before un-checking this box. See: http://www.django-cms.org/en/blog/2016/04/26/security-updates-django-cms-released/.',  # noqa
     )
