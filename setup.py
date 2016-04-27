@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.2.4',
+        'django-cms==3.2.5',
         'requests',
 
         # Default plugins
@@ -21,7 +21,7 @@ setup(
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor',
+        'djangocms-text-ckeditor>=2.9.2',
 
         # Recommended plugins
         # -------------------
