@@ -4,7 +4,7 @@ CHANGELOG
 3.0.17.0 (2016-04-26)
 ---------------------
 
-* Adds security setting for 3.0.16
+* Adds security setting for 3.0.17
 
 
 .. == other releases ==
