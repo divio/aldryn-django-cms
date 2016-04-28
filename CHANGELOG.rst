@@ -1,10 +1,15 @@
 CHANGELOG
 =========
 
+3.1.7.0 (2016-04-27)
+--------------------
+
+* Uses django-cms==3.1.7
+
 3.1.6.0 (2016-04-26)
 --------------------
 
-* Adds security setting for 3.0.16
+* Adds security setting for 3.1.6
 
 
 .. == other releases ==
