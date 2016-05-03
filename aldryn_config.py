@@ -118,40 +118,15 @@ class Form(forms.BaseForm):
         settings['CMS_LANGUAGES'] = {
             'default': {
                 'fallbacks': [fbcode for fbcode in language_codes],
-                'redirect_on_fallback': True,
-                'public': True,
-                'hide_untranslated': False,
             },
             1: [
                 {
                     'code': code,
                     'name': settings['ALL_LANGUAGES_DICT'][code],
                     'fallbacks': [fbcode for fbcode in language_codes if fbcode != code],
-                    'public': True
                 } for code in language_codes
             ]
         }
-
-
-        settings['PARLER_LANGUAGES'] = {}
-
-        for site_id, languages in settings['CMS_LANGUAGES'].items():
-            if isinstance(site_id, int):
-                langs = [
-                    {
-                        'code': lang['code'],
-                        'fallbacks': [fbcode for fbcode in language_codes if fbcode != lang['code']]
-                    } for lang in languages
-                ]
-                settings['PARLER_LANGUAGES'].update({site_id: langs})
-
-        parler_defaults = {'fallback': settings['LANGUAGE_CODE']}
-
-        for k, v in settings['CMS_LANGUAGES'].get('default', {}).items():
-            if k in ['hide_untranslated', ]:
-                parler_defaults.update({k: v})
-
-        settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
         # aldryn-boilerplates and aldryn-snake
 
