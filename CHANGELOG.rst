@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-next (20xx-xx-xx)
------------------
+3.2.5.3 (2016-05-09)
+--------------------
 
 * remove BeautifulSoup dependency (python3 compatibility)
 
