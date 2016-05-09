@@ -18,6 +18,7 @@ class Form(forms.BaseForm):
         'Enable permission checks',
         required=False,
         initial=True,
+        help_text='Enables in the edit-view of pages to assign users to pages and grant them specific permissions.',
     )
     cms_templates = forms.CharField(
         'CMS Templates',
