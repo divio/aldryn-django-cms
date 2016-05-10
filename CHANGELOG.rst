@@ -1,8 +1,8 @@
 CHANGELOG
 =========
 
-next (xxxx-xx-xx)
------------------
+3.2.5.4 (2016-05-10)
+--------------------
 
 * avoid iteritems (python3 compatibility)
 
