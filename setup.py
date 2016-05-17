@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.3.0.rc1',  # This is on devpi
+        'django-cms==3.3.0rc1',  # This is on devpi
         'requests',
 
         # Default plugins
@@ -21,7 +21,7 @@ setup(
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor==2.9.4.rc1',
+        'djangocms-text-ckeditor==2.9.4rc1',  # This is on devpi
 
         # Recommended plugins
         # -------------------
