@@ -11,9 +11,14 @@ setup(
     author_email='info@divio.ch',
     url='https://github.com/aldryn/aldryn-django-cms',
     packages=find_packages(),
+    dependency_links=(
+        # NOTE: This supports the develop version of django-cms-ckeditor,
+        # please remove the dependency link once it is released in earnest.
+        'https://github.com/divio/djangocms-text-ckeditor/tarball/develop#egg=djangocms-text-ckeditor-2.9.3.post1',
+    ),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.2.5',
+        'django-cms==3.3.0.rc1',  # This is on devpi
         'requests',
 
         # Default plugins
@@ -21,7 +26,8 @@ setup(
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor>=2.9.3',
+        # 'djangocms-text-ckeditor>=2.9.3',
+        'djangocms-text-ckeditor==2.9.3.post1',
 
         # Recommended plugins
         # -------------------
