@@ -21,7 +21,7 @@ setup(
         'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor==2.9.4.rc1',
+        'djangocms-text-ckeditor>=3.0',
 
         # Recommended plugins
         # -------------------
