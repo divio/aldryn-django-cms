@@ -254,7 +254,7 @@ class Form(forms.BaseForm):
                 break
 
         settings['MIGRATION_COMMANDS'].append(
-            'python manage.py cms fix-tree --noinput'
+            'python manage.py cms fix-tree'
         )
 
         # default plugins
