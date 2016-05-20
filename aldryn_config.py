@@ -253,11 +253,9 @@ class Form(forms.BaseForm):
                 settings['THUMBNAIL_DEFAULT_STORAGE'] = storage_backend
                 break
 
-        # commented out because fix-tree has a major bug
-        # this should be ok with CMS >=3.1.4
-        # settings['MIGRATION_COMMANDS'].append(
-        #     'python manage.py cms fix-tree --noinput'
-        # )
+        settings['MIGRATION_COMMANDS'].append(
+            'python manage.py cms fix-tree --noinput'
+        )
 
         # default plugins
         settings['INSTALLED_APPS'].extend([
