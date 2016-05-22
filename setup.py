@@ -16,6 +16,10 @@ setup(
         'django-cms==3.3.0rc2',  # This is on devpi
         'requests',
 
+        # NOTE: django-cms doesn't require this, but many of the addons do.
+        #       If it is used, however, then it must be >=1.0.9 for CMS 3.3+.
+        'aldryn-reversion>=1.0.9',
+
         # Default plugins
         # ---------------
         'djangocms-googlemap',
