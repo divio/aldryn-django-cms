@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.3.0rc2',  # This is on devpi
+        'django-cms==3.3.0rc3',  # This is on devpi
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
