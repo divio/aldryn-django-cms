@@ -57,7 +57,11 @@ setup(
         'aldryn-boilerplates>=0.7.4',
         'aldryn-snake',
         'django-compressor',
-        'django-parler',
+        # Django Parler 1.6.3 has a few known issues with ckeditor.
+        'django-parler<=1.6.2',
+        # Django Sortedm2m 1.3 introduced a regression.
+        # See https://github.com/gregmuellegger/django-sortedm2m/issues/80
+        'django-sortedm2m<=1.2.2',
         'django-robots',
         'django-simple-captcha',
         'lxml',
