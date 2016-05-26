@@ -44,7 +44,7 @@ setup(
 
         # 'django-sekizai',                # django-cms
         # 'Django-Select2<5',              # django-cms, djangocms-link
-        'django-treebeard>=4.0.1',         # django-cms
+        'django-treebeard',                # django-cms
         'djangocms-admin-style>=1.0.6,<1.2.0',    # django-cms
         # 'html5lib==0.9999999',           # django-cms
         # 'six==1.10.0'                    # django-cms
