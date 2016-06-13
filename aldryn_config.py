@@ -223,6 +223,11 @@ class Form(forms.BaseForm):
         settings['ADDON_URLS'].append(
             'filer.server.urls'
         )
+        settings['MEDIA_HEADERS'].extend([
+            (r'filer_public(?:_thumbnails)?/.*', {
+                'Cache-Control': 'max-age={}'.format(3600 * 24 * 365),
+            }),
+        ])
 
         # easy-thumbnails
         settings['INSTALLED_APPS'].extend([
