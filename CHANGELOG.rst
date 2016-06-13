@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.3.0.10 (TBA)
+--------------
+
+* Set max-age to 1 year for media files managed by filer.
+
+
 3.3.0.9 (2016-05-26)
 --------------------
 
