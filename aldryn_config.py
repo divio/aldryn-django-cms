@@ -207,6 +207,16 @@ class Form(forms.BaseForm):
         # in existing projects don't break.
         settings['COMPRESS_ENABLED'] = env('COMPRESS_ENABLED', False)
 
+        if settings['COMPRESS_ENABLED']:
+            # Set far-future expiration headers for django-compressor
+            # generated files.
+            settings.setdefault('STATIC_HEADERS', []).insert(0, (
+                r'{}/.*'.format(settings.get('COMPRESS_OUTPUT_DIR', 'CACHE')),
+                {
+                    'Cache-Control': 'public, max-age={}'.format(86400 * 365),
+                },
+            ))
+
         # django-robots
         settings['INSTALLED_APPS'].append('robots')
 
@@ -223,6 +233,12 @@ class Form(forms.BaseForm):
         settings['ADDON_URLS'].append(
             'filer.server.urls'
         )
+        settings.setdefault('MEDIA_HEADERS', []).insert(0, (
+            r'filer_public(?:_thumbnails)?/.*',
+            {
+                'Cache-Control': 'public, max-age={}'.format(86400 * 365),
+            },
+        ))
 
         # easy-thumbnails
         settings['INSTALLED_APPS'].extend([
