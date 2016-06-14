@@ -210,7 +210,7 @@ class Form(forms.BaseForm):
         if settings['COMPRESS_ENABLED']:
             # Set far-future expiration headers for django-compressor
             # generated files.
-            settings['STATIC_HEADERS'].insert(0, (
+            settings.setdefault('STATIC_HEADERS', []).insert(0, (
                 r'{}/.*'.format(settings.get('COMPRESS_OUTPUT_DIR', 'CACHE')),
                 {
                     'Cache-Control': 'public, max-age={}'.format(86400 * 365),
@@ -233,7 +233,7 @@ class Form(forms.BaseForm):
         settings['ADDON_URLS'].append(
             'filer.server.urls'
         )
-        settings['MEDIA_HEADERS'].insert(0, (
+        settings.setdefault('MEDIA_HEADERS', []).insert(0, (
             r'filer_public(?:_thumbnails)?/.*',
             {
                 'Cache-Control': 'public, max-age={}'.format(86400 * 365),
