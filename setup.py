@@ -25,7 +25,7 @@ setup(
 
         # Recommended plugins
         # -------------------
-        'cmsplugin-filer>=1.0,<1.2',
+        'cmsplugin-filer>=1.1.0,<1.2.0',
 
         # Django Parler 1.6.3 has a few known issues with ckeditor.
         'django-parler<=1.6.2',

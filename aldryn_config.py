@@ -71,16 +71,6 @@ class Form(forms.BaseForm):
         )
 
         if is_django_18_or_later:
-            settings['MIGRATION_MODULES'] = {
-                'cmsplugin_filer_file': 'cmsplugin_filer_file.migrations_django',
-                'cmsplugin_filer_image': 'cmsplugin_filer_image.migrations_django',
-                'cmsplugin_filer_folder': 'cmsplugin_filer_folder.migrations_django',
-                'cmsplugin_filer_link': 'cmsplugin_filer_link.migrations_django',
-                'cmsplugin_filer_teaser': 'cmsplugin_filer_teaser.migrations_django',
-                'cmsplugin_filer_video': 'cmsplugin_filer_video.migrations_django',
-            }
-
-        if is_django_18_or_later:
             settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
                 'sekizai.context_processors.sekizai',
                 'cms.context_processors.cms_settings',
