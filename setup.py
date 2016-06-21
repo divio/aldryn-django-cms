@@ -29,7 +29,7 @@ setup(
 
         # Recommended plugins
         # -------------------
-        'cmsplugin-filer>=1.0,<1.2',
+        'cmsplugin-filer>=1.1,<1.2',
 
         # Dependencies installed as part of CMS
         # -------------------------------------
