@@ -32,17 +32,17 @@ class Form(forms.BaseForm):
         initial='',
         help_text=SYSTEM_FIELD_WARNING,
     )
-    cms_content_cache_duration = forms.CheckboxField(
+    cms_content_cache_duration = forms.IntegerField(
         'Set Cache Duration for Content',
         required=False,
         initial=60,
-        help_text="Cache expiration (in seconds) for show_placeholder, page_url, placeholder and static_placeholder template tags.",
+        help_text='Cache expiration (in seconds) for show_placeholder, page_url, placeholder and static_placeholder template tags.',
     )
-    cms_menus_cache_duration = forms.CheckboxField(
+    cms_menus_cache_duration = forms.IntegerField(
         'Set Cache Duration for Menus',
         required=False,
         initial=3600,
-        help_text="Cache expiration (in seconds) for the menu tree.",
+        help_text='Cache expiration (in seconds) for the menu tree.',
     )
 
     def to_settings(self, data, settings):
