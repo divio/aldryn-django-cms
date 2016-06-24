@@ -32,6 +32,18 @@ class Form(forms.BaseForm):
         initial='',
         help_text=SYSTEM_FIELD_WARNING,
     )
+    cms_content_cache_duration = forms.CheckboxField(
+        'Set Cache Duration for Content',
+        required=False,
+        initial=60,
+        help_text="Cache expiration (in seconds) for show_placeholder, page_url, placeholder and static_placeholder template tags.",
+    )
+    cms_menus_cache_duration = forms.CheckboxField(
+        'Set Cache Duration for Menus',
+        required=False,
+        initial=3600,
+        help_text="Cache expiration (in seconds) for the menu tree.",
+    )
 
     def to_settings(self, data, settings):
         from functools import partial
@@ -92,6 +104,9 @@ class Form(forms.BaseForm):
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
         settings['CMS_PERMISSION'] = data['permissions_enabled']
+
+        settings['CMS_CACHE_DURATIONS']['content'] = data['cms_content_cache_duration']
+        settings['CMS_CACHE_DURATIONS']['menus'] = data['cms_menus_cache_duration']
 
         old_cms_templates_json = os.path.join(settings['BASE_DIR'], 'cms_templates.json')
 
