@@ -12,13 +12,19 @@ class Form(forms.BaseForm):
         'Leave "render_model" tags unescaped? (security risk)',
         required=False,
         initial=True,
-        help_text='IMPORTANT: Please review your project templates before un-checking this box. See: http://www.django-cms.org/en/blog/2016/04/26/security-updates-django-cms-released/.',  # noqa
+        help_text=(
+            'IMPORTANT: Please review your project templates before un-checking this box. '  # noqa
+            'See: http://www.django-cms.org/en/blog/2016/04/26/security-updates-django-cms-released/.'  # noqa
+        ),
     )
     permissions_enabled = forms.CheckboxField(
         'Enable permission checks',
         required=False,
         initial=True,
-        help_text="When set, provides new fields in each page's settings to assign levels of access to particular users.",
+        help_text=(
+            'When set, provides new fields in each page\'s settings to assign '
+            'levels of access to particular users.'
+        ),
     )
     cms_templates = forms.CharField(
         'CMS Templates',
@@ -31,6 +37,21 @@ class Form(forms.BaseForm):
         required=False,
         initial='',
         help_text=SYSTEM_FIELD_WARNING,
+    )
+    cms_content_cache_duration = forms.NumberField(
+        'Set Cache Duration for Content',
+        required=False,
+        initial=60,
+        help_text=(
+            'Cache expiration (in seconds) for show_placeholder, page_url, '
+            'placeholder and static_placeholder template tags.'
+        ),
+    )
+    cms_menus_cache_duration = forms.NumberField(
+        'Set Cache Duration for Menus',
+        required=False,
+        initial=3600,
+        help_text='Cache expiration (in seconds) for the menu tree.',
     )
 
     def to_settings(self, data, settings):
@@ -93,6 +114,18 @@ class Form(forms.BaseForm):
 
         settings['CMS_PERMISSION'] = data['permissions_enabled']
 
+        cache_durations = settings.setdefault('CMS_CACHE_DURATIONS', {
+            'content': 60,
+            'menus': 60 * 60,
+            'permissions': 60 * 60,
+        })
+
+        if data['cms_content_cache_duration']:
+            cache_durations['content'] = data['cms_content_cache_duration']
+
+        if data['cms_menus_cache_duration']:
+            cache_durations['menus'] = data['cms_menus_cache_duration']
+
         old_cms_templates_json = os.path.join(settings['BASE_DIR'], 'cms_templates.json')
 
         if os.path.exists(old_cms_templates_json):
@@ -122,7 +155,6 @@ class Form(forms.BaseForm):
                 } for code in language_codes
             ]
         }
-
 
         settings['PARLER_LANGUAGES'] = {}
 
