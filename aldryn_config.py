@@ -18,7 +18,10 @@ class Form(forms.BaseForm):
         'Enable permission checks',
         required=False,
         initial=True,
-        help_text="When set, provides new fields in each page's settings to assign levels of access to particular users.",
+        help_text=(
+            'When set, provides new fields in each page\'s settings to assign '
+            'levels of access to particular users.'
+        ),
     )
     cms_templates = forms.CharField(
         'CMS Templates',
@@ -36,7 +39,10 @@ class Form(forms.BaseForm):
         'Set Cache Duration for Content',
         required=False,
         initial=60,
-        help_text='Cache expiration (in seconds) for show_placeholder, page_url, placeholder and static_placeholder template tags.',
+        help_text=(
+            'Cache expiration (in seconds) for show_placeholder, page_url, '
+            'placeholder and static_placeholder template tags.'
+        ),
     )
     cms_menus_cache_duration = forms.NumberField(
         'Set Cache Duration for Menus',
@@ -105,8 +111,11 @@ class Form(forms.BaseForm):
 
         settings['CMS_PERMISSION'] = data['permissions_enabled']
 
-        settings['CMS_CACHE_DURATIONS']['content'] = data['cms_content_cache_duration']
-        settings['CMS_CACHE_DURATIONS']['menus'] = data['cms_menus_cache_duration']
+        if data['cms_content_cache_duration']:
+            settings['CMS_CACHE_DURATIONS']['content'] = data['cms_content_cache_duration']
+
+        if data['cms_menus_cache_duration']:
+            settings['CMS_CACHE_DURATIONS']['menus'] = data['cms_menus_cache_duration']
 
         old_cms_templates_json = os.path.join(settings['BASE_DIR'], 'cms_templates.json')
 
