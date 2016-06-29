@@ -329,4 +329,11 @@ class Form(forms.BaseForm):
         # This may need to be removed in a future release.
         settings['CMS_UNESCAPED_RENDER_MODEL_TAGS'] = data['unescaped_render_model_tags']
 
+        # Prevent injecting random comments to counter BREACH/CRIME attacks
+        # into the page tree snippets, as the javascript parsing the result
+        # expects a single top-level element.
+        (settings
+         .setdefault('RANDOM_COMMENT_EXCLUDED_VIEWS', set([]))
+         .add('cms.admin.pageadmin.get_tree'))
+
         return settings
