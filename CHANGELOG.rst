@@ -1,15 +1,23 @@
 CHANGELOG
 =========
 
+3.3.0.13 (2016-06-29)
+---------------------
+
+* Exclude the page tree snippet view from the CRIME/BREACH prevention middleware
+
+
 3.3.0.12 (2016-06-24)
 ---------------------
 
 * Added CMS_CACHE_DURATIONS settings
 
+
 3.3.0.11 (2016-06-22)
 ---------------------
 
 * Fixed cmsplugin-filer depenencies
+
 
 3.3.0.10 (2016-06-14)
 ---------------------
@@ -23,35 +31,42 @@ CHANGELOG
 
 * Use 3.3.0 release of django CMS.
 
+
 3.3.0.5 (2016-05-22)
 --------------------
 
 * Pin aldryn-reversion >= 1.0.9 for CMS 3.3
+
 
 3.2.5.4 (2016-05-10)
 --------------------
 
 * avoid iteritems (python3 compatibility)
 
+
 3.2.5.3 (2016-05-09)
 --------------------
 
 * remove BeautifulSoup dependency (python3 compatibility)
+
 
 3.2.5.2 (2016-05-02)
 --------------------
 
 * Pin Django Treebeard >= 4.0.1 to address sec. vulns.
 
+
 3.2.5.1 (2016-04-27)
 --------------------
 
 * Pin djangocms-text-ckeditor>=2.9.3
 
+
 3.2.5.0 (2016-04-27)
 --------------------
 
 * Pin djangocms-text-ckeditor>=2.9.2
+
 
 3.2.4.3 (2016-04-26)
 --------------------
@@ -67,6 +82,7 @@ CHANGELOG
 --------------------
 
 Release for CMS v3.2.0
+
 
 3.1.3.0 (2015-08-27)
 --------------------
