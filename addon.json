@@ -1,4 +1,6 @@
 {
     "package-name": "aldryn-django-cms",
-    "installed-apps": []
+    "installed-apps": [
+        "filer.contrib.django_cms"
+    ]
 }

@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.3.0.14 (2016-07-06)
+---------------------
+
+* Used latest Filer and install its "filer.contrib.django_cms" for "Media library" menu item
+
+
 3.3.0.13 (2016-06-29)
 ---------------------
 
