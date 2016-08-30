@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.3.2',
+        'django-cms==3.4.0rc1',
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
@@ -22,14 +22,14 @@ setup(
 
         # Default plugins
         # ---------------
-        'djangocms-googlemap',
         'djangocms-link',
         'djangocms-snippet',
-        'djangocms-text-ckeditor>=3.0.0',
+        'djangocms-googlemap==0.5.2rc1',
+        'djangocms-text-ckeditor==3.2.0rc3',
 
         # Recommended plugins
         # -------------------
-        'cmsplugin-filer>=1.1,<1.2',
+        'cmsplugin-filer==1.1.3rc1',
 
         # Dependencies installed as part of CMS
         # -------------------------------------
