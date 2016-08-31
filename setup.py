@@ -19,37 +19,8 @@ setup(
         # NOTE: django-cms doesn't require this, but many of the addons do.
         #       If it is used, however, then it must be >=1.0.9 for CMS 3.3+.
         'aldryn-reversion>=1.0.9',
-
-        # Default plugins
-        # ---------------
-        'djangocms-link',
-        'djangocms-snippet',
-        'djangocms-googlemap==0.5.2rc1',
-        'djangocms-text-ckeditor==3.2.0rc3',
-
-        # Recommended plugins
-        # -------------------
-        'cmsplugin-filer==1.1.3rc1',
-
-        # Dependencies installed as part of CMS
-        # -------------------------------------
-        # 'Django>=1.6.9,<1.9',            # django-cms
-        # 'django-classy-tags',            # django-cms
-        # 'django-formtools',              # django-cms
-
-        # NOTE: As of 3.2.1.x, we now let Aldryn Django determine the version
-        # of Django Reversion to install.
-
-        # 'django-sekizai',                # django-cms
-        # 'Django-Select2<5',              # django-cms, djangocms-link
         'django-treebeard>=4.0.1',         # django-cms
         'djangocms-admin-style>=1.2.0',    # django-cms
-        # 'html5lib==0.9999999',           # django-cms
-        # 'six==1.10.0'                    # django-cms
-        # 'django-appconf',                # cmsplugin-filer
-        'django-filer>1.2.3,<1.3',
-        # 'easy_thumbnails',               # cmsplugin-filer
-        # 'Pillow',                        # easy_thumbnails, djangocms-text-ckeditor
 
         # Other common
         # ------------
