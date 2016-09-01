@@ -1,6 +1,17 @@
 CHANGELOG
 =========
 
+3.4.0.2 (2016-09-01)
+--------------------
+
+* Removed djangocms-link as a dependency. Users should now use django CMS Link.
+* Removed djangocms-snippet as a dependency. Users should now use django CMS Snippet.
+* Removed djangocms-googlemap as a dependency. Users should now use django CMS Google Map.
+* Removed djangocms-text-ckeditor as a dependency. Users should now use django CMS Text CKEditor.
+* Removed cmsplugin-filer as a dependency. Users should now use django CMSPlugin Filer.
+* Removed django-filer as a dependency. Users should now use django Filer.
+
+
 3.4.0.1 (2016-08-30)
 --------------------
 
