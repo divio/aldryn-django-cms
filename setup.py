@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.4.0rc1',
+        'django-cms==3.4.0rc2',
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
@@ -21,6 +21,7 @@ setup(
         'aldryn-reversion>=1.0.9',
         'django-treebeard>=4.0.1',         # django-cms
         'djangocms-admin-style>=1.2.0',    # django-cms
+        'django-select2>=4.3,<5.0',
 
         # Other common
         # ------------
