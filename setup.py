@@ -23,7 +23,7 @@ setup(
         # Default plugins
         # ---------------
         'djangocms-googlemap',
-        'djangocms-link<2.0.0',
+        'djangocms-link<2',
         'djangocms-snippet',
         'djangocms-text-ckeditor>=3.0.0',
 
