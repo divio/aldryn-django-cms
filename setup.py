@@ -19,7 +19,7 @@ setup(
         # Default plugins
         # ---------------
         'djangocms-googlemap',
-        'djangocms-link',
+        'djangocms-link<2',
         'djangocms-snippet',
         'djangocms-text-ckeditor<3.0',
 
@@ -43,7 +43,7 @@ setup(
         # of Django Reversion to install.
 
         # 'django-sekizai',                # django-cms
-        # 'Django-Select2<5',              # django-cms, djangocms-link
+        'Django-Select2<5',                # django-cms, djangocms-link
         'django-treebeard',                # django-cms
         'djangocms-admin-style>=1.0.6,<1.2.0',    # django-cms
         # 'html5lib==0.9999999',           # django-cms
