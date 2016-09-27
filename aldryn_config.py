@@ -345,6 +345,8 @@ class Form(forms.BaseForm):
             'django_select2',
         ])
 
+        settings['DJANGOCMS_LINK_USE_SELECT2'] = True
+
         settings['ADDON_URLS'].append('aldryn_django_cms.urls')
         settings['ADDON_URLS_I18N'].append('aldryn_django_cms.urls_i18n')
 
