@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+3.3.3.3 (2016-10-11)
+--------------------
+
+* django-select2 support on djangocms-link has been disabled for installations
+  running Django >= 1.9.
+
+
 3.3.3.2 (2016-10-04)
 --------------------
 
