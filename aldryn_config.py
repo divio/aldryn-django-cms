@@ -2,6 +2,8 @@
 import json
 import os
 
+from distutils.version import LooseVersion
+
 from aldryn_client import forms
 
 SYSTEM_FIELD_WARNING = 'WARNING: this field is auto-written. Please do not change it here.'
@@ -56,15 +58,17 @@ class Form(forms.BaseForm):
 
     def to_settings(self, data, settings):
         from functools import partial
+        import django
         from django.core.urlresolvers import reverse_lazy
         from aldryn_addons.utils import boolean_ish, djsenv
         from aldryn_django import storage
 
         env = partial(djsenv, settings=settings)
 
-        # Need to detect if these settings are for Django 1.8+
-        # Is there a better way? Can't import django to check version =(
-        is_django_18_or_later = ('TEMPLATES' in settings)
+        django_version = LooseVersion(django.get_version())
+
+        is_django_18_or_later = django_version >= LooseVersion('1.8')
+        is_django_19_or_later = django_version >= LooseVersion('1.9')
 
         # Core CMS stuff
         settings['INSTALLED_APPS'].extend([
@@ -345,7 +349,9 @@ class Form(forms.BaseForm):
             'django_select2',
         ])
 
-        settings['DJANGOCMS_LINK_USE_SELECT2'] = True
+        # django-select2 < 5 is not compatible with Django >= 1.9
+        # so only enable select2 if we're on Django <= 1.8
+        settings['DJANGOCMS_LINK_USE_SELECT2'] = not is_django_19_or_later
 
         settings['ADDON_URLS'].append('aldryn_django_cms.urls')
         settings['ADDON_URLS_I18N'].append('aldryn_django_cms.urls_i18n')
