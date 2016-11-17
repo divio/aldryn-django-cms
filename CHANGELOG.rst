@@ -2,14 +2,14 @@ CHANGELOG
 =========
 
 
-3.2.5.14 (unreleased)
---------------------
+3.2.5.14 (2016-11-17)
+---------------------
 
 * Pinned djangocms-googlemap as >=1.0.0 requires django CMS 3.3 or higher
 
 
 3.2.5.13 (2016-09-16)
---------------------
+---------------------
 
 * Pinned djangocms-link
 * Pinned Django-Select2
