@@ -1,11 +1,12 @@
 CHANGELOG
 =========
 
-3.4.2.dev7 (2016-12-15)
------------------------
+3.4.2.dev10 (2017-01-06)
+------------------------
 
-* Use 3.4.2.dev7 release of django CMS, which is an experimental release with
-  performance enhancements for sites with a huge amount of pages (10k).
+* Use 3.4.2.dev10 release of django CMS, which is an experimental release with
+  performance enhancements for sites with a huge amount of pages (10k)
+  and djangocms-multisite fixes.
 
 
 3.4.1.3 (2016-10-04)

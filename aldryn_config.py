@@ -98,7 +98,12 @@ class Form(forms.BaseForm):
             'cms.middleware.toolbar.ToolbarMiddleware',
             'cms.middleware.language.LanguageCookieMiddleware',
         ])
-        settings['MIDDLEWARE_CLASSES'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
+        try:
+            apphook_mw_pos = settings['MIDDLEWARE_CLASSES'].index('django.middleware.gzip.GZipMiddleware') + 1
+        except ValueError:
+            apphook_mw_pos = 0
+        apphook_mw_pos=0
+        settings['MIDDLEWARE_CLASSES'].insert(apphook_mw_pos, 'cms.middleware.utils.ApphookReloadMiddleware')
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
