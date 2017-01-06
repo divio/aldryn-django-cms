@@ -1,10 +1,10 @@
 CHANGELOG
 =========
 
-3.4.2.dev6 (2016-12-15)
+3.4.2.dev7 (2016-12-15)
 -----------------------
 
-* Use 3.4.3.dev6 release of django CMS, which is an experimental release with
+* Use 3.4.2.dev7 release of django CMS, which is an experimental release with
   performance enhancements for sites with a huge amount of pages (10k).
 
 
