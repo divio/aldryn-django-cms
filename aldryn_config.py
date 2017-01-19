@@ -21,7 +21,15 @@ class Form(forms.BaseForm):
         'CMS Templates',
         required=True,
         initial='[["default.html", "Default"]]',
-        help_text=SYSTEM_FIELD_WARNING,
+        help_text=(
+            'A list, in JSON format, of django CMS templates available to the '
+            'project. Use double quotes for values. This list will be '
+            'overridden if the project supplies a <a href='
+            '\'http://docs.django-cms.org/en/stable/reference/configuration.html#cms-templates\''
+            'target=\'_blank\'>CMS_TEMPLATES setting</a>. See <a href='
+            '\'http://support.divio.com/project-types/django-cms/manage-templates-in-your-django-cms-project-on-the-divio-cloud\' '
+            'target=\'_blank\'>Manage templates in your django CMS project</a> for more information.'
+        ),
     )
     boilerplate_name = forms.CharField(
         'Boilerplate Name',

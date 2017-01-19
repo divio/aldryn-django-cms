@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+3.4.2.3 (2017-01-19)
+--------------------
+
+* Updated the help_text of the CMS Templates field in the config.
+
 3.4.2.1 (2017-01-09)
 --------------------
 
