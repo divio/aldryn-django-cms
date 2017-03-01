@@ -21,7 +21,7 @@ setup(
         'aldryn-reversion>=1.0.9',
         'django-treebeard>=4.0.1',         # django-cms
         'djangocms-admin-style>=1.2.0',    # django-cms
-        'django-select2>=4.3,<5.0',
+        'django-select2>=4.3',
 
         # Other common
         # ------------
