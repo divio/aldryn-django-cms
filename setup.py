@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.4.3.post1.dev10',
+        'django-cms==3.4.3.post1.dev11',
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
