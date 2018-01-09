@@ -4,8 +4,6 @@ import inspect
 
 from importlib import import_module
 
-from cms.utils.django_load import get_module
-
 
 def is_subclass(cls, base_class):
     """
