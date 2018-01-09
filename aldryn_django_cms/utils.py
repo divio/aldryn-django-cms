@@ -2,6 +2,8 @@
 
 import inspect
 
+from importlib import import_module
+
 from cms.utils.django_load import get_module
 
 
@@ -13,21 +15,19 @@ def is_subclass(cls, base_class):
     return inspect.isclass(cls) and issubclass(cls, base_class)
 
 
-def safe_get_module(*args):
-    try:
-        return get_module(*args)
-    except ImportError:
-        return None
-
-
 def get_classes_from_module(app, module_name, from_base_class=None):
-    module = safe_get_module(app, module_name, False, False)
+    module_path = '%s.%s' % (app, module_name)
+    
+    try:
+        module_object = import_module(module_path)
+    except ImportError:
+        module_object = None
 
-    if not module:
+    if not module_object:
         raise StopIteration
 
-    for cls_name in dir(module):
-        cls = getattr(module, cls_name)
+    for cls_name in dir(module_object):
+        cls = getattr(module_object, cls_name)
 
         if not inspect.isclass(cls):
             continue
