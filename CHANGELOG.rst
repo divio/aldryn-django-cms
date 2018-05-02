@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.4.6.3 (unreleased)
+--------------------
+
+* Removed aldryn-reversion from requirements.
+
+
 3.4.6.2 (2018-03-26)
 --------------------
 
