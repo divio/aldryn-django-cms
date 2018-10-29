@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+4.0.0.7 (2018-10-29)
+--------------------
+
+* Fix, so that 4.0.0dev6 release of djangoCMS is used instead of 4.0.0dev5.
+
+
 4.0.0.6 (2018-10-25)
 --------------------
 
