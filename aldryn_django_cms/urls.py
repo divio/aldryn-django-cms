@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
-from django.conf.urls import url, include
 from django.contrib.sitemaps.views import sitemap
 
 from cms.sitemaps import CMSSitemap
 
+from .compat import include, url
 from .views import check_uninstall_ok
 
 
