@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-3.6.0.1 (unreleased)
+3.6.0.1 (2018-11-19)
 --------------------
  * Use 3.6.0rc1 release of django CMS.
 
