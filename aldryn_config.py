@@ -99,13 +99,25 @@ class Form(forms.BaseForm):
                 'cms.context_processors.cms_settings',
             ])
 
-        settings['MIDDLEWARE_CLASSES'].extend([
-            'cms.middleware.user.CurrentUserMiddleware',
-            'cms.middleware.page.CurrentPageMiddleware',
-            'cms.middleware.toolbar.ToolbarMiddleware',
-            'cms.middleware.language.LanguageCookieMiddleware',
-        ])
-        settings['MIDDLEWARE_CLASSES'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
+        if 'MIDDLEWARE_CLASSES' in settings:
+            # Django<2
+            settings['MIDDLEWARE_CLASSES'].extend([
+                'cms.middleware.user.CurrentUserMiddleware',
+                'cms.middleware.page.CurrentPageMiddleware',
+                'cms.middleware.toolbar.ToolbarMiddleware',
+                'cms.middleware.language.LanguageCookieMiddleware',
+            ])
+            settings['MIDDLEWARE_CLASSES'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
+
+        if 'MIDDLEWARE' in settings:
+            # Django>=1.11
+            settings['MIDDLEWARE'].extend([
+                'cms.middleware.user.CurrentUserMiddleware',
+                'cms.middleware.page.CurrentPageMiddleware',
+                'cms.middleware.toolbar.ToolbarMiddleware',
+                'cms.middleware.language.LanguageCookieMiddleware',
+            ])
+            settings['MIDDLEWARE'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
@@ -194,8 +206,7 @@ class Form(forms.BaseForm):
             'aldryn_snake.template_api.template_processor',
         ])
         TEMPLATE_LOADERS.insert(
-            TEMPLATE_LOADERS.index(
-                'django.template.loaders.app_directories.Loader'),
+            TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
             'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
         )
 
