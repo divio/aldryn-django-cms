@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-3.6.0.2 (unreleased)
+3.6.0.2 (2018-11-28)
 --------------------
 
  * Fix ``MIDDLEWARES`` for Django 2.x compatibility
