@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+3.6.0.2 (unreleased)
+--------------------
+
+ * Fix ``MIDDLEWARES`` for Django 2.x compatibility
+
+
 3.6.0.1 (2018-11-19)
 --------------------
  * Use 3.6.0rc1 release of django CMS.
