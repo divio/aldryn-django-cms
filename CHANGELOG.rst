@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-3.5.3.3 (unreleased)
+3.5.3.3 (2018-12-15)
 --------------------
 
 * Fixed problem with missing Toolbar when MIDDLEWARE_CLASSES are using
