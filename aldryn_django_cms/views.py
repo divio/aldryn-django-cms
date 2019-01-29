@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import json
 
-from django.http import (
-    HttpResponse,
-    HttpResponseBadRequest
-)
+from django.http import HttpResponse, HttpResponseBadRequest
 
 from cms.app_base import CMSApp
 from cms.models import CMSPlugin, Page
@@ -23,7 +19,7 @@ def check_uninstall_ok(request):
     apps = request.GET.get('apps', '').split(',')
 
     if apps == ['']:
-        return HttpResponseBadRequest("no apps provided")
+        return HttpResponseBadRequest('no apps provided')
 
     page_lookup = Page.objects.filter
     plugin_lookup = CMSPlugin.objects.filter
@@ -53,7 +49,7 @@ def check_uninstall_ok(request):
         # found in cms_app.py
         cms_apphook_classes = get_classes_from_module(
             app=app,
-            module_name="cms_apps",
+            module_name='cms_apps',
             from_base_class=CMSApp
         )
 
@@ -66,11 +62,11 @@ def check_uninstall_ok(request):
                 installed_apphooks.append(hook)
 
         # generator of classes found in menu.py module
-        old_cms_menu_classes = set(get_classes_from_module(app=app, module_name="menu"))
+        old_cms_menu_classes = set(get_classes_from_module(app=app, module_name='menu'))
 
         # 3.4 supports but does not require cms_menus module
         # will be required in 3.5
-        new_cms_menu_classes = set(get_classes_from_module(app=app, module_name="cms_menus"))
+        new_cms_menu_classes = set(get_classes_from_module(app=app, module_name='cms_menus'))
 
         for menu_class in (old_cms_menu_classes|new_cms_menu_classes):
             menu = menu_class.__name__
@@ -90,4 +86,4 @@ def check_uninstall_ok(request):
         }
     else:
         result = 'ok'
-    return HttpResponse(json.dumps(result), content_type="application/json")
+    return HttpResponse(json.dumps(result), content_type='application/json')

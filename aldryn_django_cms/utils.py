@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import inspect
 
 from cms.utils.django_load import get_module
