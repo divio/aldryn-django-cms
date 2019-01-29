@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import json
 
-from django.http import (
-    HttpResponse,
-    HttpResponseBadRequest
-)
+from django.http import HttpResponse, HttpResponseBadRequest
 
 from cms.app_base import CMSApp
 from cms.models import CMSPlugin, Page
