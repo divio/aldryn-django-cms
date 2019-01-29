@@ -14,7 +14,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==3.6.0rc3',
+        'django-cms==3.6.0',
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
