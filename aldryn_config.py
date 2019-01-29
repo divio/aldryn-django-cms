@@ -127,7 +127,7 @@ class Form(forms.BaseForm):
             with open(old_cms_templates_json) as fobj:
                 templates = json.load(fobj)
         else:
-            templates= settings.get('CMS_TEMPLATES', json.loads(data['cms_templates']))
+            templates = settings.get('CMS_TEMPLATES', json.loads(data['cms_templates']))
 
         settings['CMS_TEMPLATES'] = templates
 
