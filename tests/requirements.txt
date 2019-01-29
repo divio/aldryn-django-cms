@@ -1,0 +1,6 @@
+# requirements from setup.py
+django-filer>=1.2.4
+# other requirements
+djangocms-helper
+tox
+coverage

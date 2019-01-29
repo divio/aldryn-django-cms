@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from django.contrib.sitemaps.views import sitemap
 
 from cms.sitemaps import CMSSitemap
