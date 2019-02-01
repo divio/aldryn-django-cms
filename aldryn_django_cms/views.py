@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-
 import json
 
-from django.http import (
-    HttpResponse,
-    HttpResponseBadRequest
-)
+from django.http import HttpResponse, HttpResponseBadRequest
 
 from cms.app_base import CMSApp
 from cms.models import CMSPlugin, Page
@@ -72,7 +68,7 @@ def check_uninstall_ok(request):
         # will be required in 3.5
         new_cms_menu_classes = set(get_classes_from_module(app=app, module_name="cms_menus"))
 
-        for menu_class in (old_cms_menu_classes|new_cms_menu_classes):
+        for menu_class in (old_cms_menu_classes | new_cms_menu_classes):
             menu = menu_class.__name__
             # Only look at menus that are "cms_enabled"
             cms_enabled = getattr(menu_class, 'cms_enabled', False)
