@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+4.0.0.9 (2019-04-03)
+--------------------
+
+* Remove cms_page_resolve from SSO whitelist, as this view has been removed from the CMS.
+
+
 4.0.0.8 (2019-04-01)
 --------------------
 
