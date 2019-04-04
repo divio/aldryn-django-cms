@@ -3,9 +3,10 @@ Changelog
 =========
 
 
-3.4.6.4 (unreleased)
+3.4.6.4 (2019-04-04)
 ====================
 
+* Fixed an issue with psycopg2 pinning to 2.8 for now
 * Extended test matrix
 * Added isort and adapted imports
 * Adapted code base to align with other supported addons
