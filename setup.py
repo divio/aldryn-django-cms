@@ -36,6 +36,7 @@ setup(
         'django-simple-captcha',
         'lxml',
         'YURL',
+        'psycopg2<2.8',
     ),
     include_package_data=True,
     zip_safe=False,
