@@ -6,7 +6,7 @@ from aldryn_django_cms import __version__
 
 
 REQUIREMENTS = [
-    'django-cms==3.6.0',
+    'django-cms==3.7.0a1',
 
     'aldryn-addons',
     'requests',
@@ -31,6 +31,7 @@ REQUIREMENTS = [
     'django-simple-captcha',
     'lxml',
     'YURL',
+    'psycopg2<2.8',
 ]
 
 
@@ -42,8 +43,8 @@ CLASSIFIERS = [
     'Operating System :: OS Independent',
     'Framework :: Django',
     'Framework :: Django :: 1.11',
-    'Framework :: Django :: 2.0',
     'Framework :: Django :: 2.1',
+    'Framework :: Django :: 2.2',
     'Programming Language :: Python',
     'Programming Language :: Python :: 2',
     'Programming Language :: Python :: 2.7',
@@ -51,6 +52,7 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
     'Topic :: Internet :: WWW/HTTP',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     'Topic :: Software Development',
