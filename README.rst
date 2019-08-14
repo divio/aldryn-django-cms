@@ -90,14 +90,14 @@ You can run tests by executing::
     python setup.py test
 
 
-.. |build| image:: https://travis-ci.org/divio/aldryn-django-cms.svg?branch=support/3.6.x
+.. |build| image:: https://travis-ci.org/divio/aldryn-django-cms.svg?branch=support/3.7.x
     :target: https://travis-ci.org/divio/aldryn-django-cms
-.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.6.x/graph/badge.svg
+.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.7.x/graph/badge.svg
     :target: https://codecov.io/gh/divio/aldryn-django-cms
 
-.. |python| image:: https://img.shields.io/badge/python-3.4%20%7C%203.5%20%7C%C2%A03.6-blue.svg
+.. |python| image:: https://img.shields.io/badge/python-3.5%20%7C%C2%A03.6%20%7C%C2%A03.7-blue.svg
     :target: https://pypi.org/project/aldryn-django-cms/
-.. |django| image:: https://img.shields.io/badge/django-1.11%20%7C%202.0%20%7C%C2%A02.1-blue.svg
+.. |django| image:: https://img.shields.io/badge/django-1.11%20%7C%202.1%20%7C%C2%A02.2-blue.svg
     :target: https://www.djangoproject.com/
-.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.6-blue.svg
+.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.7-blue.svg
     :target: https://www.django-cms.org/
