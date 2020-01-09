@@ -20,7 +20,6 @@ REQUIREMENTS = [
     # Other common
     # ------------
     # TODO: mostly to be split out into other packages
-    'aldryn-boilerplates>=0.8.0',
     'aldryn-snake',
     'django-compressor',
     'django-parler',

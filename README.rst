@@ -7,9 +7,8 @@ Aldryn django CMS
 An opinionated django CMS setup bundled as an Divio Cloud addon.
 
 This package will auto configure django CMS including some extra tools.
-It includes django-filer, a default set of plugins, django-parler,
-aldryn-boilerplates and some more. A future goal is to split some of those
-other tools into separate addons.
+It includes django-filer, a default set of plugins, django-parler and some more.
+A future goal is to split some of those other tools into separate addons.
 
 
 Contributing

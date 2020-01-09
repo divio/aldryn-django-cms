@@ -170,16 +170,6 @@ class Form(forms.BaseForm):
 
         settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
-        # aldryn-boilerplates and aldryn-snake
-
-        # FIXME: Make ALDRYN_BOILERPLATE_NAME a configurable parameter
-
-        settings['ALDRYN_BOILERPLATE_NAME'] = env(
-            'ALDRYN_BOILERPLATE_NAME',
-            data.get('boilerplate_name', 'legacy'),
-        )
-        settings['INSTALLED_APPS'].append('aldryn_boilerplates')
-
         TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
         TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([

@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+3.7.1.2 (unreleased)
+====================
+
+* Remove aldryn-boilerplate support from the addon
+
+
 3.7.1.1 (26.11.2019)
 ====================
 
