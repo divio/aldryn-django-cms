@@ -170,6 +170,13 @@ class Form(forms.BaseForm):
 
         settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
+        # some addons require the boilerplate name, if not provided fallback
+        # to legacy. The addon itself is not installed anymore through this package
+        settings['ALDRYN_BOILERPLATE_NAME'] = env(
+            'ALDRYN_BOILERPLATE_NAME',
+            data.get('boilerplate_name', 'legacy'),
+        )
+
         TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
         TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([
