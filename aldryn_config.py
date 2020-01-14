@@ -180,17 +180,17 @@ class Form(forms.BaseForm):
         TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
         TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([
-            'aldryn_boilerplates.context_processors.boilerplate',
+            # 'aldryn_boilerplates.context_processors.boilerplate',
             'aldryn_snake.template_api.template_processor',
         ])
         TEMPLATE_LOADERS.insert(
             TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
-            'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
+            # 'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
         )
 
         settings['STATICFILES_FINDERS'].insert(
             settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
-            'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+            # 'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
         )
 
         # django sitemap support
