@@ -32,12 +32,12 @@ class Form(forms.BaseForm):
             'target=\'_blank\'>Manage templates in your django CMS project</a> for more information.'
         ),
     )
-    boilerplate_name = forms.CharField(
-        'Boilerplate Name',
-        required=False,
-        initial='',
-        help_text=SYSTEM_FIELD_WARNING,
-    )
+    # boilerplate_name = forms.CharField(
+    #     'Boilerplate Name',
+    #     required=False,
+    #     initial='',
+    #     help_text=SYSTEM_FIELD_WARNING,
+    # )
     cms_content_cache_duration = forms.NumberField(
         'Set Cache Duration for Content',
         required=False,
@@ -183,15 +183,15 @@ class Form(forms.BaseForm):
             # 'aldryn_boilerplates.context_processors.boilerplate',
             'aldryn_snake.template_api.template_processor',
         ])
-        TEMPLATE_LOADERS.insert(
-            TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
-            # 'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
-        )
+        # TEMPLATE_LOADERS.insert(
+        #     TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
+        #     'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
+        # )
 
-        settings['STATICFILES_FINDERS'].insert(
-            settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
-            # 'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
-        )
+        # settings['STATICFILES_FINDERS'].insert(
+        #     settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
+        #     'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
+        # )
 
         # django sitemap support
         settings['INSTALLED_APPS'].append('django.contrib.sitemaps')
