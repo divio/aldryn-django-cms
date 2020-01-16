@@ -178,7 +178,7 @@ class Form(forms.BaseForm):
         )
 
         TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
-        TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
+        # TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([
             # 'aldryn_boilerplates.context_processors.boilerplate',
             'aldryn_snake.template_api.template_processor',
