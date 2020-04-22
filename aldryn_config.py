@@ -32,12 +32,6 @@ class Form(forms.BaseForm):
             'target=\'_blank\'>Manage templates in your django CMS project</a> for more information.'
         ),
     )
-    # boilerplate_name = forms.CharField(
-    #     'Boilerplate Name',
-    #     required=False,
-    #     initial='',
-    #     help_text=SYSTEM_FIELD_WARNING,
-    # )
     cms_content_cache_duration = forms.NumberField(
         'Set Cache Duration for Content',
         required=False,
@@ -170,28 +164,10 @@ class Form(forms.BaseForm):
 
         settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
-        # some addons require the boilerplate name, if not provided fallback
-        # to legacy. The addon itself is not installed anymore through this package
-        # settings['ALDRYN_BOILERPLATE_NAME'] = env(
-        #     'ALDRYN_BOILERPLATE_NAME',
-        #     data.get('boilerplate_name', 'legacy'),
-        # )
-
         TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
-        # TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([
-            # 'aldryn_boilerplates.context_processors.boilerplate',
             'aldryn_snake.template_api.template_processor',
         ])
-        # TEMPLATE_LOADERS.insert(
-        #     TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
-        #     'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
-        # )
-
-        # settings['STATICFILES_FINDERS'].insert(
-        #     settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
-        #     'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
-        # )
 
         # django sitemap support
         settings['INSTALLED_APPS'].append('django.contrib.sitemaps')
