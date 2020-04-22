@@ -3,6 +3,14 @@ Changelog
 =========
 
 
+3.7.1.2 (unreleased)
+====================
+
+* Remove aldryn-boilerplate support from the addon
+* Added Django 3 support
+* Added Python 3.8 support
+
+
 3.7.1.1 (26.11.2019)
 ====================
 

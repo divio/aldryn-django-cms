@@ -1,6 +1,6 @@
 # requirements from setup.py
 django-filer>=1.2.4
 # other requirements
-djangocms-helper
+django-app-helper
 tox
 coverage
