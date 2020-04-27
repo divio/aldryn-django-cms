@@ -55,7 +55,7 @@ class Form(forms.BaseForm):
 
     def to_settings(self, data, settings):
         from functools import partial
-        from django.core.urlresolvers import reverse_lazy
+        from django.urls import reverse_lazy
         from aldryn_addons.utils import boolean_ish, djsenv
 
         env = partial(djsenv, settings=settings)
@@ -88,16 +88,10 @@ class Form(forms.BaseForm):
             'djangocms_admin_style',
         )
 
-        if is_django_18_or_later:
-            settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
-                'sekizai.context_processors.sekizai',
-                'cms.context_processors.cms_settings',
-            ])
-        else:
-            settings['TEMPLATE_CONTEXT_PROCESSORS'].extend([
-                'sekizai.context_processors.sekizai',
-                'cms.context_processors.cms_settings',
-            ])
+        settings['TEMPLATES'][0]['OPTIONS']['context_processors'].extend([
+            'sekizai.context_processors.sekizai',
+            'cms.context_processors.cms_settings',
+        ])
 
         settings['MIDDLEWARE_CLASSES'].extend([
             'cms.middleware.user.CurrentUserMiddleware',
@@ -183,19 +177,14 @@ class Form(forms.BaseForm):
         )
         settings['INSTALLED_APPS'].append('aldryn_boilerplates')
 
-        if is_django_18_or_later:
-            TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
-            TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
-        else:
-            TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATE_CONTEXT_PROCESSORS']
-            TEMPLATE_LOADERS = settings['TEMPLATE_LOADERS']
+        TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
+        TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([
             'aldryn_boilerplates.context_processors.boilerplate',
             'aldryn_snake.template_api.template_processor',
         ])
         TEMPLATE_LOADERS.insert(
-            TEMPLATE_LOADERS.index(
-                'django.template.loaders.app_directories.Loader'),
+            TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
             'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
         )
 
