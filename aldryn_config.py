@@ -94,13 +94,13 @@ class Form(forms.BaseForm):
         ])
 
         if settings.get('MIDDLEWARE', None):
-            settings['MIDDLEWARE_CLASSES'].extend([
+            settings['MIDDLEWARE'].extend([
                 'cms.middleware.user.CurrentUserMiddleware',
                 'cms.middleware.page.CurrentPageMiddleware',
                 'cms.middleware.toolbar.ToolbarMiddleware',
                 'cms.middleware.language.LanguageCookieMiddleware',
             ])
-            settings['MIDDLEWARE_CLASSES'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
+            settings['MIDDLEWARE'].insert(0, 'cms.middleware.utils.ApphookReloadMiddleware',)
 
         settings['ADDON_URLS_I18N_LAST'] = 'cms.urls'
 
