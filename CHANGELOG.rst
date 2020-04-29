@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-4.0.0.12 (2020-03-17)
+4.0.0.12 (2020-04-29)
 --------------------
 
 * Add Django 2.x compatibility, fixed MIDDLEWARE setting, template loaders remapped and removed pre Django 1.11 url support.
