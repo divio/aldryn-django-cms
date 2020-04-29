@@ -17,9 +17,8 @@ setup(
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
-        #       If it is used, however, then it must be >=1.0.9 for CMS 3.3+.
         'django-treebeard>=4.0.1',         # django-cms
-        'djangocms-admin-style>=1.2.0',    # django-cms
+        'djangocms-admin-style',           # django-cms
         'django-select2>=4.3',
 
         # Other common
