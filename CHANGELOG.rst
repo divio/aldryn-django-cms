@@ -2,19 +2,19 @@ CHANGELOG
 =========
 
 4.0.0.12 (2020-04-29)
---------------------
+---------------------
 
 * Add Django 2.x compatibility, fixed MIDDLEWARE setting, template loaders remapped and removed pre Django 1.11 url support.
 
 
 4.0.0.11 (2020-03-17)
---------------------
+---------------------
 
 * Use 4.0.0dev8 release of djangoCMS.
 
 
 4.0.0.10 (2019-04-05)
---------------------
+---------------------
 
 * Pin psycopg2 to <2.8, as 2.8 breaks API compatibility.
 
