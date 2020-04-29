@@ -1,7 +1,13 @@
 CHANGELOG
 =========
 
-4.0.0.6 (2020-03-17)
+4.0.0.12 (2020-03-17)
+--------------------
+
+* Add Django 2.x compatibility, fixed MIDDLEWARE setting, template loaders remapped and removed pre Django 1.11 url support.
+
+
+4.0.0.11 (2020-03-17)
 --------------------
 
 * Use 4.0.0dev8 release of djangoCMS.
