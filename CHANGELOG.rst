@@ -3,9 +3,16 @@ Changelog
 =========
 
 
-3.7.1.2 (unreleased)
+3.7.3.1 (26.05.2020)
 ====================
 
+* Added support for django CMS 3.7.3 (LTS)
+
+
+3.7.2.1 (22.04.2020)
+====================
+
+* Added support for django CMS 3.7.2 (LTS)
 * Remove aldryn-boilerplate support from the addon
 * Added Django 3 support
 * Added Python 3.8 support
