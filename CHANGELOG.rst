@@ -3,7 +3,13 @@ Changelog
 =========
 
 
-3.5.3.4 (20149-04-04)
+3.5.4.1 (2020-07-21)
+====================
+
+* Use 3.5.4 release of django CMS.
+
+
+3.5.3.4 (2019-04-04)
 ====================
 
 * Fixed an issue with psycopg2 pinning to 2.8 for now
