@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
-from .compat import include, url
+from django.urls import include, re_path
 
 
 urlpatterns = [
-    url(r'^api/~select2/', include('django_select2.urls')),
+    re_path(r'^api/~select2/', include('django_select2.urls')),
 
     # required by aldryn-forms
-    url(r'^api/~captcha/', include('captcha.urls')),
+    re_path(r'^api/~captcha/', include('captcha.urls')),
 ]
