@@ -49,7 +49,9 @@ class Form(forms.BaseForm):
 
     def to_settings(self, data, settings):
         from functools import partial
+
         from django.urls import reverse_lazy
+
         from aldryn_addons.utils import djsenv
 
         env = partial(djsenv, settings=settings)
