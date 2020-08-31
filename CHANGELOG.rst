@@ -3,8 +3,8 @@ Changelog
 =========
 
 
-Unreleased
-==========
+3.7.4.2 (unreleased)
+====================
 
 * Updated README
 

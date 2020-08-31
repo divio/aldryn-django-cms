@@ -4,11 +4,11 @@ Aldryn django CMS
 
 |build| |coverage|
 
-Aldryn django CMS is an opinionated django CMS setup bundled as an Aldryn addon for the `Divio cloud
-deployment platform <https://docs.divio.com>`_.
+Aldryn django CMS is an opinionated django CMS setup bundled as an Aldryn addon for the
+`Divio Cloud <https://docs.divio.com>`_.
 
-`Aldryn addons <https://docs.divio.com/en/latest/background/addon-basics>`_ are wrappers around Python packages, that
-take care of their installation and configuration.
+`Aldryn addons <https://docs.divio.com/en/latest/background/addons-basics/>`_ are
+wrappers around Python packages, that take care of their installation and configuration.
 
 Python/Django compatibility
 ===========================
@@ -30,7 +30,7 @@ Recommended
 
 To use Aldryn django CMS, create a new Aldryn **django CMS** project on `the Divio Control Panel
 <https://control.divio.com>`_. This project type includes Aldryn django CMS along with some additional packages in
-order to set up a ready-to-go project. The additional packages include Django File, a default set of plugins, Django
+order to set up a ready-to-go project. The additional packages include Django Filer, a default set of plugins, Django
 Parler and others.
 
 Alternative option
@@ -71,14 +71,14 @@ Release a new version
 ---------------------
 
 Each Aldryn django CMS release uses the version number of the corresponding django CMS release, with an extra number
-(starting with ``0``) to indicate the version of Aldryn django CMS for that release. So for example version ``3.7.4.2``
+(starting with ``1``) to indicate the version of Aldryn django CMS for that release. So for example version ``3.7.4.3``
 of Aldryn django CMS is the *third* Aldryn django CMS version that installs django CMS 3.7.4.
 
 Repeat the following until you are satisfied that the Addon works as expected:
 
 #.  Ensure that you are working in a clean local directory, and that no unwanted compiled or other files are present.
 #.  Update the ``CHANGELOG.rst`` as and if required.
-#.  Update the version number in ``__init__.py``.
+#.  Update the version number in ``__init__.py`` and ``setup.py``.
 #.  Use the Divio CLI to verify and upload the addon (see `How to update an existing addon
     <https://docs.divio.com/en/latest/how-to/addon-update-existing/>`_ to the the *Alpha* channel.
 #.  Test the Addon on the Divio platform.
