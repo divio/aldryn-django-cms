@@ -1,10 +1,17 @@
 CHANGELOG
 =========
 
+
+4.0.0.14 (2020-11-06)
+---------------------
+
+* Use 4.0.0dev10 release of django CMS.
+
+
 4.0.0.13 (2020-10-30)
 ---------------------
 
-* Use 4.0.0dev9 release of djangoCMS.
+* Use 4.0.0dev9 release of django CMS.
 
 
 4.0.0.12 (2020-04-29)
@@ -16,7 +23,7 @@ CHANGELOG
 4.0.0.11 (2020-03-17)
 ---------------------
 
-* Use 4.0.0dev8 release of djangoCMS.
+* Use 4.0.0dev8 release of django CMS.
 
 
 4.0.0.10 (2019-04-05)
@@ -34,25 +41,25 @@ CHANGELOG
 4.0.0.8 (2019-04-01)
 --------------------
 
-* Use 4.0.0dev7 release of djangoCMS.
+* Use 4.0.0dev7 release of django CMS.
 
 
 4.0.0.7 (2018-10-29)
 --------------------
 
-* Fix, so that 4.0.0dev6 release of djangoCMS is used instead of 4.0.0dev5.
+* Fix, so that 4.0.0dev6 release of django CMS is used instead of 4.0.0dev5.
 
 
 4.0.0.6 (2018-10-25)
 --------------------
 
-* Use 4.0.0dev6 release of djangoCMS.
+* Use 4.0.0dev6 release of django CMS.
 
 
 4.0.0.5 (2018-09-19)
 --------------------
 
-* Use 4.0.0dev5 release of djangoCMS.
+* Use 4.0.0dev5 release of django CMS.
 
 
 4.0.0.4 (2018-09-06)
