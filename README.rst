@@ -22,7 +22,7 @@ Get started
 ===========
 
 See the `Divio Developer Handbook <https://docs.divio.com>`_ for general information on using the platform. Start with
-the `tutorial <https://docs.divio.com/introduction>`_ if this is new to you.
+the `tutorial <https://docs.divio.com/en/latest/introduction/>`_ if this is new to you.
 
 
 Recommended
