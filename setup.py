@@ -5,7 +5,7 @@ from aldryn_django_cms import __version__
 
 
 REQUIREMENTS = [
-    'django-cms==3.8.0',
+    'django-cms== 3.9.0rc1',
 
     'aldryn-addons',
     'requests',
@@ -41,8 +41,8 @@ CLASSIFIERS = [
     'Operating System :: OS Independent',
     'Framework :: Django',
     'Framework :: Django :: 2.2',
-    'Framework :: Django :: 3.0',
     'Framework :: Django :: 3.1',
+    'Framework :: Django :: 3.2',
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
     'Programming Language :: Python :: 3.5',
