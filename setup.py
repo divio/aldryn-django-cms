@@ -10,15 +10,14 @@ REQUIREMENTS = [
     'aldryn-addons',
     'requests',
 
-    # NOTE: django-cms doesn't require this, but many of the addons do.
-    #       If it is used, however, then it must be >=1.0.9 for CMS 3.3+.
-    'django-treebeard>=4.0.1',         # django-cms
+    # treebeard needs to be pinned to <4.5 until django CMS is patched
+    # https://github.com/django-cms/django-cms/pull/6984/
+    'django-treebeard>=4.3,<4.5',      # django-cms
     'djangocms-admin-style',           # django-cms
     'django-select2>=6.2',
 
     # Other common
     # ------------
-    # TODO: mostly to be split out into other packages
     'aldryn-snake',
     'django-compressor',
     'django-parler',
