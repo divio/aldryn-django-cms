@@ -99,7 +99,7 @@ Once satisfied:
 
 .. |python| image:: https://img.shields.io/badge/python-3.5%20%7C%C2%A03.6%20%7C%C2%A03.7%20%7C%C2%A03.8-blue.svg
     :target: https://pypi.org/project/aldryn-django-cms/
-.. |django| image:: https://img.shields.io/badge/django-1.11%20%7C%202.1%20%7C%C2%A02.2-blue.svg
+.. |django| image:: https://img.shields.io/badge/django-2.2%20%7C%C2%A03.0%20%7C%C2%A03.1-blue.svg
     :target: https://www.djangoproject.com/
 .. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.8-blue.svg
     :target: https://www.django-cms.org/
