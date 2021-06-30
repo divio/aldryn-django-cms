@@ -3,13 +3,7 @@ Changelog
 =========
 
 
-3.8.0.2 (2020-10-28)
+3.9.0.4 (2021-06-30)
 ====================
 
-* Added support for django CMS 3.8.0
-
-
-3.8.0.1 (2020-09-17)
-====================
-
-* Added support for django CMS 3.8.0 RC1
+* Added support for django CMS 3.9.0
