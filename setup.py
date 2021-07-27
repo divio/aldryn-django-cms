@@ -28,7 +28,6 @@ REQUIREMENTS = [
     'django-simple-captcha',
     'lxml',
     'YURL',
-    'psycopg2<2.8',
 ]
 
 
