@@ -3,10 +3,11 @@ Changelog
 =========
 
 
-3.7.4.2 (unreleased)
+3.7.4.3 (27.07.2021)
 ====================
 
 * Updated README
+* Removed psycopg2 as dependency
 
 
 3.7.4.1 (21.07.2020)
