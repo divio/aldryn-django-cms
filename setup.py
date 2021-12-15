@@ -13,7 +13,7 @@ setup(
     packages=find_packages(),
     install_requires=(
         'aldryn-addons',
-        'django-cms==4.0.0dev11',
+        'django-cms',
         'requests',
 
         # NOTE: django-cms doesn't require this, but many of the addons do.
@@ -35,7 +35,7 @@ setup(
         'django-simple-captcha',
         'lxml',
         'YURL',
-        'psycopg2<2.8',
+        'psycopg2',
     ),
     include_package_data=True,
     zip_safe=False,
