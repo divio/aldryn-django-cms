@@ -1,83 +1,105 @@
-##########
-Aldryn CMS
-##########
+=================
+Aldryn django CMS
+=================
+
+|build| |coverage|
+
+Aldryn django CMS is an opinionated django CMS setup bundled as an Aldryn addon for the
+`Divio Cloud <https://docs.divio.com>`_.
+
+`Aldryn addons <https://docs.divio.com/en/latest/background/addons-basics/>`_ are
+wrappers around Python packages, that take care of their installation and configuration.
+
+Python/Django compatibility
+===========================
+
+This version of Aldryn django CMS installs |djangocms| and is compatible with:
+
+|python| |django|
 
 
-|PyPI Version|
+Get started
+===========
 
-An opinionated django CMS setup bundled as an Aldryn Addon.
-
-This package will auto configure django CMS including some extra tools.
-It includes django-filer, a default set of plugins, django-parler,
-aldryn-boilerplates and some more. A future goal is to split some of those
-other tools into separate Addons.
-
-======================
-Installation & Updates
-======================
-
-*********************
-Aldryn Platform Users
-*********************
-
-Nothing to do. ``aldryn-django-cms`` is part of the Aldryn Platform.
-
-*******************
-Manual Installation
-*******************
-
-.. important:: Please follow the setup instructions for installing
-               ``aldryn-addons`` and ``aldryn-django`` first!
+See the `Divio Developer Handbook <https://docs.divio.com>`_ for general information on using the platform. Start with
+the `tutorial <https://docs.divio.com/introduction>`_ if this is new to you.
 
 
-Add ``aldryn-django-cms`` to your projects ``requirements.txt`` or pip
-install it.::
+Recommended
+-----------
 
-    pip install aldryn-django-cms==3.2.0.0
+To use Aldryn django CMS, create a new Aldryn **django CMS** project on `the Divio Control Panel
+<https://control.divio.com>`_. This project type includes Aldryn django CMS along with some additional packages in
+order to set up a ready-to-go project. The additional packages include Django Filer, a default set of plugins, Django
+Parler and others.
 
+Alternative option
+------------------
 
-The version is made up of the django CMS release with an added digit for the
-release version of this package itself.
-
-If you followed the ``aldryn-addons`` and ``aldryn-django`` installation
-instructions, you should already have a ``ALDRYN_ADDONS`` setting. Add
-``aldryn-django-cms`` to it.::
-
-    INSTALLED_ADDONS = [
-        'aldryn-django',
-        'aldryn-django-cms',
-    ]
-
-Create the ``addons/aldryn-django-cms`` directory at the same level as your
-``manage.py``. Then copy ``addon.json``, ``aldryn_config.py`` from
-the matching sourcecode into it.
-Also create a ``settings.json`` file in the same directory with the following
-content::
-
-    {
-      "cms_templates": "[[\"default.html\", \"Default\"]]"
-    }
-
-.. important:: The above ``settings.json`` assume you have a ``default.html``
-               cms template installed.
-
-.. note:: The need to manually copy ``aldryn_config.py`` and ``addon.json`` is
-          due to legacy compatibility with the Aldryn Platform and will no
-          longer be necessary in a later release of aldryn-addons.
+Alternatively, you can install Aldryn django CMS in an Aldryn Divio Django project, but in this case, you will need
+to install Django Filer and other components included in the Divio django CMS base project yourself.
 
 
-============
-Contributing
-============
+How to
+=================
 
-This is a community project. We love to get any feedback in the form of
-`issues`_ and `pull requests`_. Before submitting your pull request, please
-review our guidelines for `Aldryn addons`_.
+Contribute
+----------
 
-.. _issues: https://github.com/aldryn/aldryn-django-cms/issues
-.. _pull requests: https://github.com/aldryn/aldryn-django-cms/pulls
-.. _Aldryn addons: http://docs.aldryn.com/en/latest/reference/addons/index.html
-.. _aldryn-django-cms: https://github.com/aldryn/aldryn-django-cms
+This is a an open-source project. We'd be delighted to receive your
+feedback in the form of issues and pull requests. Before submitting your
+pull request, please review our `contribution guidelines
+<http://docs.django-cms.org/en/latest/contributing/index.html>`_.
 
-.. |PyPI Version| image:: http://img.shields.io/pypi/v/aldryn-django-cms.svg
-   :target: https://pypi.python.org/pypi/aldryn-django-cms
+We're grateful to all contributors who have helped create and maintain this package.
+Contributors are listed at the `contributors <https://github.com/divio/aldryn-django-cms/graphs/contributors>`_
+section.
+
+
+Run tests
+-------------
+
+Run tests by executing::
+
+    virtualenv env
+    source env/bin/activate
+    pip install -r tests/requirements.txt
+    python setup.py test
+
+
+Release a new version
+---------------------
+
+Each Aldryn django CMS release uses the version number of the corresponding django CMS release, with an extra number
+(starting with ``1``) to indicate the version of Aldryn django CMS for that release. So for example version ``3.7.4.3``
+of Aldryn django CMS is the *third* Aldryn django CMS version that installs django CMS 3.7.4.
+
+Repeat the following until you are satisfied that the Addon works as expected:
+
+#.  Ensure that you are working in a clean local directory, and that no unwanted compiled or other files are present.
+#.  Update the ``CHANGELOG.rst`` as and if required.
+#.  Update the version number in ``__init__.py`` and ``setup.py``.
+#.  Use the Divio CLI to verify and upload the addon (see `How to update an existing addon
+    <https://docs.divio.com/en/latest/how-to/addon-update-existing/>`_ to the the *Alpha* channel.
+#.  Test the Addon on the Divio platform.
+
+Once satisfied:
+
+#.  Push to Git, make a pull request, ask for a review, obtain approval, squash and merge.
+#.  Tag with the version number.
+#.  Move the release to the *Beta* or *Stable* channel as appropriate, and add a note to the Changelog field,
+    on Divio.
+#.  Notify the team via Slack.
+
+
+.. |build| image:: https://travis-ci.org/divio/aldryn-django-cms.svg?branch=support/3.9.x
+    :target: https://travis-ci.org/divio/aldryn-django-cms
+.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.9.x/graph/badge.svg
+    :target: https://codecov.io/gh/divio/aldryn-django-cms
+
+.. |python| image:: https://img.shields.io/badge/python-3.6%20%7C%C2%A03.7%20%7C%C2%A03.8%20%7C%C2%A03.9-blue.svg
+    :target: https://pypi.org/project/aldryn-django-cms/
+.. |django| image:: https://img.shields.io/badge/django-2.2%20%7C%203.1%20%7C%C2%A03.2-blue.svg
+    :target: https://www.djangoproject.com/
+.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.9-blue.svg
+    :target: https://www.django-cms.org/

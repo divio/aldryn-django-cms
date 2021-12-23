@@ -24,7 +24,6 @@ setup(
         # Other common
         # ------------
         # TODO: mostly to be split out into other packages
-        'aldryn-boilerplates>=0.7.4',
         'aldryn-snake',
         'django-compressor',
         'django-parler',
