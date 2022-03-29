@@ -92,8 +92,8 @@ Once satisfied:
 #.  Notify the team via Slack.
 
 
-.. |build| image:: https://travis-ci.org/divio/aldryn-django-cms.svg?branch=support/3.10.x
-    :target: https://travis-ci.org/divio/aldryn-django-cms
+.. |build| image:: https://github.com/divio/aldryn-django-cms/actions/workflows/default.yml/badge.svg?branch=support/3.10.x
+    :target: https://github.com/divio/aldryn-django/actions
 .. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.10.x/graph/badge.svg
     :target: https://codecov.io/gh/divio/aldryn-django-cms
 
