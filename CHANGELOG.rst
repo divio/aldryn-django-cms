@@ -3,13 +3,7 @@ Changelog
 =========
 
 
-3.9.0.5 (2021-07-27)
-====================
+3.10.0.0 (2022-03-29)
+=====================
 
-* Removed psycopg2 as dependency
-
-
-3.9.0.4 (2021-06-30)
-====================
-
-* Added support for django CMS 3.9.0
+* Added support for django CMS 3.10.0

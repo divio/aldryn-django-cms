@@ -92,14 +92,14 @@ Once satisfied:
 #.  Notify the team via Slack.
 
 
-.. |build| image:: https://travis-ci.org/divio/aldryn-django-cms.svg?branch=support/3.9.x
+.. |build| image:: https://travis-ci.org/divio/aldryn-django-cms.svg?branch=support/3.10.x
     :target: https://travis-ci.org/divio/aldryn-django-cms
-.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.9.x/graph/badge.svg
+.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.10.x/graph/badge.svg
     :target: https://codecov.io/gh/divio/aldryn-django-cms
 
-.. |python| image:: https://img.shields.io/badge/python-3.6%20%7C%C2%A03.7%20%7C%C2%A03.8%20%7C%C2%A03.9-blue.svg
+.. |python| image:: https://img.shields.io/badge/python-3.7%20%7C%C2%A03.8%20%7C%C2%A03.9%20%7C%C2%A03.10-blue.svg
     :target: https://pypi.org/project/aldryn-django-cms/
 .. |django| image:: https://img.shields.io/badge/django-2.2%20%7C%203.1%20%7C%C2%A03.2-blue.svg
     :target: https://www.djangoproject.com/
-.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.9-blue.svg
+.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.10-blue.svg
     :target: https://www.django-cms.org/
