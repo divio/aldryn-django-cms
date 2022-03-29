@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 HELPER_SETTINGS = {
     'INSTALLED_APPS': [],
+    'SECRET_KEY': 'not-empty',
     'CMS_LANGUAGES': {
         1: [{
             'code': 'en',
