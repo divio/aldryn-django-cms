@@ -35,7 +35,7 @@ jobs:
         uses: liskin/gh-problem-matcher-wrap@v1
         with:
           linters: isort
-          run: isort -c --df aldryn_django
+          run: isort -c --df aldryn_django_cms
 
   unit-tests:
     runs-on: ubuntu-latest
