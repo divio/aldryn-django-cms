@@ -93,7 +93,7 @@ Once satisfied:
 
 
 .. |build| image:: https://github.com/divio/aldryn-django-cms/actions/workflows/default.yml/badge.svg?branch=support/3.10.x
-    :target: https://github.com/divio/aldryn-django/actions
+    :target: https://github.com/divio/aldryn-django-cms/actions
 .. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.10.x/graph/badge.svg
     :target: https://codecov.io/gh/divio/aldryn-django-cms
 
