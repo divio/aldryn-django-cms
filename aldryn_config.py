@@ -31,12 +31,6 @@ class Form(forms.BaseForm):
             'target=\'_blank\'>Manage templates in your django CMS project</a> for more information.'
         ),
     )
-    boilerplate_name = forms.CharField(
-        'Boilerplate Name',
-        required=False,
-        initial='',
-        help_text=SYSTEM_FIELD_WARNING,
-    )
     cms_content_cache_duration = forms.NumberField(
         'Set Cache Duration for Content',
         required=False,
@@ -59,10 +53,6 @@ class Form(forms.BaseForm):
         from aldryn_addons.utils import boolean_ish, djsenv
 
         env = partial(djsenv, settings=settings)
-
-        # Need to detect if these settings are for Django 1.8+
-        # Is there a better way? Can't import django to check version =(
-        is_django_18_or_later = ('TEMPLATES' in settings)
 
         # Core CMS stuff
         settings['INSTALLED_APPS'].extend([
@@ -167,31 +157,11 @@ class Form(forms.BaseForm):
 
         settings['PARLER_LANGUAGES'].update({'default': parler_defaults})
 
-        # aldryn-boilerplates and aldryn-snake
-
-        # FIXME: Make ALDRYN_BOILERPLATE_NAME a configurable parameter
-
-        settings['ALDRYN_BOILERPLATE_NAME'] = env(
-            'ALDRYN_BOILERPLATE_NAME',
-            data.get('boilerplate_name', 'legacy'),
-        )
-        settings['INSTALLED_APPS'].append('aldryn_boilerplates')
-
+        # aldryn_snake
         TEMPLATE_CONTEXT_PROCESSORS = settings['TEMPLATES'][0]['OPTIONS']['context_processors']
-        TEMPLATE_LOADERS = settings['TEMPLATES'][0]['OPTIONS']['loaders']
         TEMPLATE_CONTEXT_PROCESSORS.extend([
-            'aldryn_boilerplates.context_processors.boilerplate',
             'aldryn_snake.template_api.template_processor',
         ])
-        TEMPLATE_LOADERS.insert(
-            TEMPLATE_LOADERS.index('django.template.loaders.app_directories.Loader'),
-            'aldryn_boilerplates.template_loaders.AppDirectoriesLoader'
-        )
-
-        settings['STATICFILES_FINDERS'].insert(
-            settings['STATICFILES_FINDERS'].index('django.contrib.staticfiles.finders.AppDirectoriesFinder'),
-            'aldryn_boilerplates.staticfile_finders.AppDirectoriesFinder',
-        )
 
         # django sitemap support
         settings['INSTALLED_APPS'].append('django.contrib.sitemaps')

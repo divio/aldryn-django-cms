@@ -24,7 +24,6 @@ setup(
         # Other common
         # ------------
         # TODO: mostly to be split out into other packages
-        'aldryn-boilerplates>=0.7.4',
         'aldryn-snake',
         'django-compressor',
         'django-parler',
@@ -35,7 +34,7 @@ setup(
         'django-simple-captcha',
         'lxml',
         'YURL',
-        'psycopg2<2.8',
+        'psycopg2',
     ),
     include_package_data=True,
     zip_safe=False,
