@@ -26,7 +26,7 @@ REQUIREMENTS = [
     # See https://github.com/gregmuellegger/django-sortedm2m/issues/80
     'django-sortedm2m>=1.5.0',
     'django-robots',
-    'django-simple-captcha',
+    'django-simple-captcha<=0.5.20',
     'lxml',
     'YURL',
 ]
