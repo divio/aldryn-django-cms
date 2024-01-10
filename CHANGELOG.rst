@@ -3,6 +3,12 @@ Changelog
 =========
 
 
+3.11.4.1 (2024-01-10)
+=====================
+
+* Pinned django-simple-captcha to <=0.5.20 as newer versions need 4.x
+
+
 3.11.4.0 (2023-09-19)
 =====================
 
