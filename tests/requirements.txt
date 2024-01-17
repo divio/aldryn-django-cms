@@ -8,4 +8,4 @@ uwsgi
 # requirements from setup.py
 django-filer>=1.2.4
 # for testing
-git+https://github.com/django-cms/django-cms.git@release/4.0.1.x#egg=django-cms
+git+https://github.com/FinalAngel/django-cms.git@release/4.0.1.x#egg=django-cms
