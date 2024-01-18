@@ -5,7 +5,7 @@ from aldryn_django_cms import __version__
 
 
 REQUIREMENTS = [
-    'django-cms @ git+ssh://git@github.com/django-cms/django-cms.git@release/4.0.1.x#egg=django_cms',
+    # 'django-cms',
 
     'aldryn-addons',
     'requests',
