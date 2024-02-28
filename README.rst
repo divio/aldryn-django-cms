@@ -92,14 +92,14 @@ Once satisfied:
 #.  Notify the team via Slack.
 
 
-.. |build| image:: https://github.com/divio/aldryn-django-cms/actions/workflows/default.yml/badge.svg?branch=support/3.11.x
+.. |build| image:: https://github.com/divio/aldryn-django-cms/actions/workflows/default.yml/badge.svg?branch=support/4.1.x
     :target: https://github.com/divio/aldryn-django-cms/actions
-.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/3.11.x/graph/badge.svg
+.. |coverage| image:: https://codecov.io/gh/divio/aldryn-django-cms/branch/support/4.1.x/graph/badge.svg
     :target: https://codecov.io/gh/divio/aldryn-django-cms
 
-.. |python| image:: https://img.shields.io/badge/python-3.7%20%7C%C2%A03.8%20%7C%C2%A03.9%20%7C%C2%A03.11-blue.svg
+.. |python| image:: https://img.shields.io/badge/python-3.9%20%7C%C2%A03.10%20%7C%C2%A03.11%20%7C%C2%A03.12-blue.svg
     :target: https://pypi.org/project/aldryn-django-cms/
-.. |django| image:: https://img.shields.io/badge/django-2.2%20%7C%203.1%20%7C%C2%A03.2-blue.svg
+.. |django| image:: https://img.shields.io/badge/django-3.2%20%7C%204.1%20%7C%C2%A04.2-blue.svg
     :target: https://www.djangoproject.com/
-.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-3.11-blue.svg
+.. |djangocms| image:: https://img.shields.io/badge/django%20CMS-4.1-blue.svg
     :target: https://www.django-cms.org/

@@ -5,7 +5,7 @@ from aldryn_django_cms import __version__
 
 
 REQUIREMENTS = [
-    'django-cms==3.11.5',
+    'django-cms==4.1.0',
 
     'aldryn-addons',
     'requests',
@@ -18,7 +18,6 @@ REQUIREMENTS = [
 
     # Other common
     # ------------
-    # TODO: mostly to be split out into other packages
     'aldryn-snake',
     'django-compressor',
     'django-parler',
