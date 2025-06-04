@@ -5,7 +5,7 @@ from aldryn_django_cms import __version__
 
 
 REQUIREMENTS = [
-    'django-cms==4.1.5',
+    'django-cms==4.1.6',
 
     'aldryn-addons',
     'requests',
@@ -55,7 +55,7 @@ CLASSIFIERS = [
 
 
 setup(
-    name='aldryn_django_cms',
+    name='aldryn-django-cms',
     version=__version__,
     author='Divio AG',
     author_email='info@divio.ch',
