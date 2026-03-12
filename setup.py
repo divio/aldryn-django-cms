@@ -6,16 +6,14 @@ from aldryn_django_cms import __version__
 
 REQUIREMENTS = [
     'django-cms==4.1.9',
-
+    'Django<6',
     'aldryn-addons',
     'requests',
-
     # NOTE: django-cms doesn't require this, but many of the addons do.
     #       If it is used, however, then it must be >=1.0.9 for CMS 3.3+.
     'django-treebeard>=4.0.1',         # django-cms
     'djangocms-admin-style',           # django-cms
     'django-select2>=6.2',
-
     # Other common
     # ------------
     'aldryn-snake',
@@ -38,15 +36,12 @@ CLASSIFIERS = [
     'License :: OSI Approved :: BSD License',
     'Operating System :: OS Independent',
     'Framework :: Django',
-    'Framework :: Django :: 2.2',
-    'Framework :: Django :: 3.1',
-    'Framework :: Django :: 3.2',
+    'Framework :: Django :: 4.2',
+    'Framework :: Django :: 5.0',
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
-    'Programming Language :: Python :: 3.7',
-    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
     'Topic :: Internet :: WWW/HTTP',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     'Topic :: Software Development',
@@ -68,5 +63,4 @@ setup(
     zip_safe=False,
     install_requires=REQUIREMENTS,
     classifiers=CLASSIFIERS,
-    test_suite='tests.settings.run',
 )
